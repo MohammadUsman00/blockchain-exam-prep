@@ -8,7 +8,8 @@
 
 ## Live demo
 
-**[View live →](https://blockchain-exam-prep.vercel.app)** (replace with your deployment URL after you connect your own repo.)
+**[View live →](https://blockchain-exam-prep.vercel.app)**  
+Production URL: `https://blockchain-exam-prep.vercel.app`
 
 ---
 
@@ -30,7 +31,7 @@ BlockChain_NPTEL_Guide/
 │       ├── mock-questions.js   # Global MQ — 30 mock MCQs
 │       ├── tracker-topics.js   # Global TOPICS — checklist rows per week
 │       └── app.js              # Nav, pick/rv, mock UI, countdown, tracker persistence
-├── vercel.json             # Static hosting + SPA-style fallback to index.html
+├── vercel.json             # Vercel static hosting config + security/cache headers
 ├── DEPLOY.md               # Step-by-step deploy to Vercel / GitHub Pages
 └── README.md
 ```
@@ -90,7 +91,7 @@ Use the localhost URL printed in the terminal (usually `http://localhost:3000`).
 
 ## Deploy (quick)
 
-- **Vercel:** import the repo; `vercel.json` already points at `index.html`. Optional: `npm i -g vercel` then `vercel` from the repo root.  
+- **Vercel:** import the repo and set framework preset to **Other** (not Remix). Optional CLI: `npm i -g vercel` then `vercel` from the repo root.  
 - **GitHub Pages:** deploy from branch `main`, folder `/` (root).  
 
 More detail: [DEPLOY.md](DEPLOY.md).
