@@ -1,0 +1,1379 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="description" content="NPTEL Blockchain and its Applications NOC26_CS34 Complete Exam Preparation — All 12 Weeks, 150+ Questions, Formulas, Mock Tests">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blockchain & Its Applications — NPTEL NOC26_CS34 Complete Exam Prep Kit</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+<div class="hdr">
+<div class="hdr-in">
+<div class="badge">⚡ Final Exam · NOC26_CS34 · IIT Kharagpur · April 2026</div>
+<h1>Blockchain &amp; Its Applications<br>Complete Exam Prep Kit</h1>
+<p class="sub">NPTEL MOOC · All 12 Weeks · 150+ Questions · Full Coverage · Final Edition</p>
+<div style="font-size:10px;color:var(--mut);font-family:var(--mono);margin-top:4px">
+Instructors: IIT Kharagpur · Pre-req: Computer Networks, OS, Cryptography · Industry: IBM · HPE · Intel
+</div>
+<div class="stats">
+<div class="stat">Questions <b>150+</b></div>
+<div class="stat">Weeks <b>1–12</b></div>
+<div class="stat">Formulas <b>16 Key</b></div>
+<div class="stat">Mock Tests <b>30Q</b></div>
+<div class="stat">Comparisons <b>9 Tables</b></div>
+<div class="stat">Attacks <b>9 Types</b></div>
+<div class="stat">Exam Day <b id="countdown">Loading...</b></div>
+</div>
+<div style="margin-top:12px;background:rgba(74,222,128,.07);border:1px solid rgba(74,222,128,.2);border-radius:7px;padding:8px 14px;font-size:11px;color:#86efac;font-family:var(--mono)">
+📋 NPTEL CBT Structure: Section 1 (25×1m, no neg) · Section 2 (10×2m, no neg) · Section 3 (5×2m MSQ, partial marks)
+</div>
+</div>
+</div>
+<nav>
+<div class="nav-in">
+<button class="nb on" onclick="S('w1',this)">W1–3</button>
+<button class="nb" onclick="S('w4',this)">W4–6</button>
+<button class="nb" onclick="S('w7',this)">W7–9</button>
+<button class="nb" onclick="S('w10',this)">W10–12</button>
+<button class="nb" onclick="S('formulas',this)">📐 Formulas</button>
+<button class="nb" onclick="S('compare',this)">⚖️ Compare</button>
+<button class="nb" onclick="S('attacks',this)">🛡️ Attacks</button>
+<button class="nb" onclick="S('mock',this)">📝 Mock 30Q</button>
+<button class="nb" onclick="S('cheat',this)">⚡ Cheatsheet</button>
+<button class="nb" onclick="S('tracker',this)">📊 Tracker</button>
+<button class="nb" onclick="S('stellar',this)">🌟 Stellar/Ripple</button>
+</div>
+</nav>
+<div class="main">
+
+<!-- ===== W1-3 ===== -->
+<div class="sec on" id="w1">
+<div class="stitle"><div class="ic">1</div>Weeks 1–3: Cryptography, Bitcoin Basics, Merkle Trees</div>
+<div class="hl w"><div class="l">⚠️ Week 1–3 Pattern</div>Hash properties tested EVERY exam. Know: SHA-256, avalanche effect, public/private key roles, Merkle tree math, Bitcoin block structure.</div>
+
+<div class="qc"><div class="qm"><span class="qn">W1·Q1</span><span class="tag th">HOT</span></div>
+<div class="qt">Which statement correctly describes the <strong>SHA-256</strong> hash function?</div>
+<ul class="opts">
+<li onclick="pick(this,'no')">a) Output size grows with input size</li>
+<li onclick="pick(this,'ok')">b) Always produces a fixed 256-bit output regardless of input size</li>
+<li onclick="pick(this,'no')">c) It encrypts data for secure communication</li>
+<li onclick="pick(this,'no')">d) Different inputs can map to same output intentionally</li>
+</ul>
+<div class="ans" id="a-w1q1"><div class="al">Answer: (b)</div>SHA-256 always outputs exactly 256 bits. Critical: <b>hashing ≠ encryption</b>. Hashing is one-way; encryption is reversible with a key. This distinction is tested every semester.</div>
+<button class="rb" onclick="rv('a-w1q1',this)">Show Answer</button></div>
+
+<div class="qc"><div class="qm"><span class="qn">W1·Q2</span><span class="tag th">HOT</span></div>
+<div class="qt">The <strong>avalanche effect</strong> in hash functions means:</div>
+<ul class="opts">
+<li onclick="pick(this,'no')">a) Hash function is slow to compute</li>
+<li onclick="pick(this,'ok')">b) A single-bit change in input causes ~50% of output bits to change</li>
+<li onclick="pick(this,'no')">c) The hash avalanches when input is very large</li>
+<li onclick="pick(this,'no')">d) Output bits are always 0 or 1 alternately</li>
+</ul>
+<div class="ans" id="a-w1q2"><div class="al">Answer: (b)</div>Avalanche effect: flip 1 input bit → approximately half (~128 of 256) output bits flip. This makes tiny tampering detectable.</div>
+<button class="rb" onclick="rv('a-w1q2',this)">Show Answer</button></div>
+
+<div class="qc"><div class="qm"><span class="qn">W1·Q3</span><span class="tag th">HOT</span><span class="tag tt">TRAP</span></div>
+<div class="qt">Which property guarantees that given a hash output H, it is <strong>computationally infeasible to find the input M</strong>?</div>
+<ul class="opts">
+<li onclick="pick(this,'ok')">a) Pre-image resistance</li>
+<li onclick="pick(this,'no')">b) Collision resistance</li>
+<li onclick="pick(this,'no')">c) Second pre-image resistance</li>
+<li onclick="pick(this,'no')">d) Avalanche resistance</li>
+</ul>
+<div class="ans" id="a-w1q3"><div class="al">Answer: (a)</div><b>Pre-image resistance</b>: given H(m), cannot find m.<br><b>Second pre-image resistance</b>: given m1, cannot find m2 where H(m1)=H(m2).<br><b>Collision resistance</b>: cannot find any m1≠m2 where H(m1)=H(m2).<br>These are three DISTINCT properties — know all three!</div>
+<button class="rb" onclick="rv('a-w1q3',this)">Show Answer</button></div>
+
+<div class="qc"><div class="qm"><span class="qn">W1·Q4</span><span class="tag tc">CALC</span></div>
+<div class="qt">A hash function produces <strong>128-bit</strong> output. How many hash computations are needed on average for a birthday (collision) attack?</div>
+<ul class="opts">
+<li onclick="pick(this,'no')">a) 2¹²⁸</li>
+<li onclick="pick(this,'ok')">b) 2⁶⁴</li>
+<li onclick="pick(this,'no')">c) 2³²</li>
+<li onclick="pick(this,'no')">d) 2¹⁶</li>
+</ul>
+<div class="ans" id="a-w1q4"><div class="al">Answer: (b) — Formula: 2^(N/2)</div>Birthday attack on N-bit hash requires ~2^(N/2) computations.<br>128-bit → 2^(128/2) = <b>2⁶⁴</b> computations.</div>
+<button class="rb" onclick="rv('a-w1q4',this)">Show Answer</button></div>
+
+<div class="qc"><div class="qm"><span class="qn">W1·Q5</span><span class="tag th">HOT</span></div>
+<div class="qt">Which provides <strong>non-repudiation</strong>?</div>
+<ul class="opts">
+<li onclick="pick(this,'no')">a) Symmetric encryption</li>
+<li onclick="pick(this,'no')">b) SHA-256 hash</li>
+<li onclick="pick(this,'ok')">c) Digital signature using private key</li>
+<li onclick="pick(this,'no')">d) HMAC with shared secret</li>
+</ul>
+<div class="ans" id="a-w1q5"><div class="al">Answer: (c)</div>Non-repudiation = sender cannot deny sending. Only <b>private key digital signature</b> achieves this — only you have your private key, so only you could have signed.</div>
+<button class="rb" onclick="rv('a-w1q5',this)">Show Answer</button></div>
+
+<div class="qc"><div class="qm"><span class="qn">W1·Q6</span><span class="tag tt">TRAP</span></div>
+<div class="qt">HMAC (Hash-based Message Authentication Code) provides:</div>
+<ul class="opts">
+<li onclick="pick(this,'no')">a) Non-repudiation and authentication</li>
+<li onclick="pick(this,'ok')">b) Message integrity and authentication, but NOT non-repudiation</li>
+<li onclick="pick(this,'no')">c) Confidentiality only</li>
+<li onclick="pick(this,'no')">d) Digital signature equivalent</li>
+</ul>
+<div class="ans" id="a-w1q6"><div class="al">Answer: (b)</div>HMAC uses a <b>shared secret key</b>. Both parties know the key, so either could have generated it — no non-repudiation. Digital signatures use asymmetric keys, providing non-repudiation.</div>
+<button class="rb" onclick="rv('a-w1q6',this)">Show Answer</button></div>
+
+<div class="qc"><div class="qm"><span class="qn">W2·Q1</span><span class="tag th">HOT</span><span class="tag tt">TRAP</span></div>
+<div class="qt">Bob receives Alice's message encrypted for <strong>confidentiality</strong> and <strong>signed for authenticity</strong>. Which keys does Bob use?</div>
+<ul class="opts">
+<li onclick="pick(this,'no')">a) Alice's Public Key + Bob's Private Key</li>
+<li onclick="pick(this,'ok')">b) Bob's Private Key to decrypt + Alice's Public Key to verify signature</li>
+<li onclick="pick(this,'no')">c) Bob's Public Key to decrypt + Alice's Private Key to verify</li>
+<li onclick="pick(this,'no')">d) Shared symmetric key for both</li>
+</ul>
+<div class="ans" id="a-w2q1"><div class="al">Answer: (b) — Golden Rule</div><b>Encryption:</b> Alice encrypts with Bob's PUBLIC key → Bob decrypts with Bob's PRIVATE key.<br><b>Signature:</b> Alice signs with Alice's PRIVATE key → Bob verifies with Alice's PUBLIC key.<br>Memory trick: "Encrypt TO someone = use THEIR public key. Verify FROM someone = use THEIR public key."</div>
+<button class="rb" onclick="rv('a-w2q1',this)">Show Answer</button></div>
+
+<div class="qc"><div class="qm"><span class="qn">W2·Q2</span><span class="tag th">HOT</span></div>
+<div class="qt">Which statement about <strong>asymmetric vs symmetric</strong> encryption is TRUE?</div>
+<ul class="opts">
+<li onclick="pick(this,'no')">a) Asymmetric is faster than symmetric encryption</li>
+<li onclick="pick(this,'no')">b) Symmetric encryption enables non-repudiation</li>
+<li onclick="pick(this,'ok')">c) Asymmetric encryption is slower but solves the key distribution problem</li>
+<li onclick="pick(this,'no')">d) Symmetric requires two different keys</li>
+</ul>
+<div class="ans" id="a-w2q2"><div class="al">Answer: (c)</div>Symmetric = one shared key, fast, but how do you securely share the key? Asymmetric = public/private pair, solves key distribution, but computationally expensive. In practice: hybrid (TLS uses asymmetric to exchange symmetric key).</div>
+<button class="rb" onclick="rv('a-w2q2',this)">Show Answer</button></div>
+
+<div class="qc"><div class="qm"><span class="qn">W2·Q3</span><span class="tag td">DEFN</span></div>
+<div class="qt">In a <strong>PKI (Public Key Infrastructure)</strong>, what is the role of a Certificate Authority (CA)?</div>
+<ul class="opts">
+<li onclick="pick(this,'no')">a) Mine blocks in proof-of-work</li>
+<li onclick="pick(this,'ok')">b) Issue digital certificates binding public keys to identities, and revoke them when needed</li>
+<li onclick="pick(this,'no')">c) Store private keys for users</li>
+<li onclick="pick(this,'no')">d) Validate smart contract execution</li>
+</ul>
+<div class="ans" id="a-w2q3"><div class="al">Answer: (b)</div>CA vouches that "this public key belongs to this person/organization" via a signed certificate. If a private key is compromised, CA can revoke the certificate. Hyperledger Fabric uses CA for MSP identity management.</div>
+<button class="rb" onclick="rv('a-w2q3',this)">Show Answer</button></div>
+
+<div class="qc"><div class="qm"><span class="qn">W2·Q4</span><span class="tag th">HOT</span></div>
+<div class="qt">What does the <strong>nonce</strong> in a Bitcoin block header do?</div>
+<ul class="opts">
+<li onclick="pick(this,'no')">a) Identifies the miner who found the block</li>
+<li onclick="pick(this,'no')">b) Stores the number of transactions</li>
+<li onclick="pick(this,'ok')">c) A 32-bit value miners vary to find a hash below the target difficulty</li>
+<li onclick="pick(this,'no')">d) Encrypts the coinbase transaction</li>
+</ul>
+<div class="ans" id="a-w2q4"><div class="al">Answer: (c)</div>Nonce is a 32-bit field (0 to 2³²-1 ≈ 4.29 billion values). Miners try different nonce values until hash(block_header) &lt; target. If all nonces exhausted, miner changes extra-nonce in coinbase or timestamp.</div>
+<button class="rb" onclick="rv('a-w2q4',this)">Show Answer</button></div>
+
+<div class="qc"><div class="qm"><span class="qn">W2·Q5</span><span class="tag th">HOT</span></div>
+<div class="qt">A Bitcoin block ID is computed as:</div>
+<ul class="opts">
+<li onclick="pick(this,'no')">a) SHA-256 of the entire block (header + transactions)</li>
+<li onclick="pick(this,'ok')">b) Double SHA-256 of the block header only</li>
+<li onclick="pick(this,'no')">c) SHA-256 of the Merkle root only</li>
+<li onclick="pick(this,'no')">d) SHA-256 of the previous block hash</li>
+</ul>
+<div class="ans" id="a-w2q5"><div class="al">Answer: (b)</div>Block ID = SHA256(SHA256(block_header)). <b>Header only</b>, not entire block. Header contains: version, prev_block_hash, merkle_root, timestamp, bits (difficulty), nonce.</div>
+<button class="rb" onclick="rv('a-w2q5',this)">Show Answer</button></div>
+
+<div class="qc"><div class="qm"><span class="qn">W3·Q1</span><span class="tag tc">CALC</span><span class="tag th">HOT</span></div>
+<div class="qt">Bitcoin block reward is <strong>3.125 BTC</strong>, block time = 10 min. BTC mined in <strong>24 hours</strong>?</div>
+<ul class="opts">
+<li onclick="pick(this,'no')">a) 312.5 BTC</li>
+<li onclick="pick(this,'ok')">b) 450 BTC</li>
+<li onclick="pick(this,'no')">c) 900 BTC</li>
+<li onclick="pick(this,'no')">d) 225 BTC</li>
+</ul>
+<div class="ans" id="a-w3q1"><div class="al">Answer: (b)</div>Blocks/day = (24×60)/10 = <b>144 blocks/day</b><br>Total = 144 × 3.125 = <b>450 BTC/day</b></div>
+<button class="rb" onclick="rv('a-w3q1',this)">Show Answer</button></div>
+
+<div class="qc"><div class="qm"><span class="qn">W3·Q2</span><span class="tag tc">CALC</span><span class="tag th">HOT</span></div>
+<div class="qt">Merkle tree with <strong>16 transactions</strong> — total number of nodes (all levels including leaves and root)?</div>
+<ul class="opts">
+<li onclick="pick(this,'no')">a) 32</li>
+<li onclick="pick(this,'no')">b) 16</li>
+<li onclick="pick(this,'ok')">c) 31</li>
+<li onclick="pick(this,'no')">d) 15</li>
+</ul>
+<div class="ans" id="a-w3q2"><div class="al">Answer: (c) — Formula: 2n−1</div>For a perfect binary tree with n leaves: Total nodes = 2n−1 = 2(16)−1 = <b>31</b><br>Breakdown: 16 leaves + 8 + 4 + 2 + 1 = 31</div>
+<button class="rb" onclick="rv('a-w3q2',this)">Show Answer</button></div>
+
+<div class="qc"><div class="qm"><span class="qn">W3·Q3</span><span class="tag tc">CALC</span><span class="tag th">HOT</span></div>
+<div class="qt">To prove a transaction is in a Merkle tree with <strong>64 transactions</strong>, how many hashes must be provided in the Merkle proof?</div>
+<ul class="opts">
+<li onclick="pick(this,'no')">a) 32</li>
+<li onclick="pick(this,'no')">b) 8</li>
+<li onclick="pick(this,'ok')">c) 6</li>
+<li onclick="pick(this,'no')">d) 64</li>
+</ul>
+<div class="ans" id="a-w3q3"><div class="al">Answer: (c) — Formula: log₂(n)</div>Merkle proof path length = log₂(n) = log₂(64) = <b>6 hashes</b><br>Each level provides the sibling hash. SPV (Simplified Payment Verification) uses this.</div>
+<button class="rb" onclick="rv('a-w3q3',this)">Show Answer</button></div>
+
+<div class="qc"><div class="qm"><span class="qn">W3·Q4</span><span class="tag tt">TRAP</span></div>
+<div class="qt">A Merkle tree has an <strong>odd number of transactions</strong>. What happens?</div>
+<ul class="opts">
+<li onclick="pick(this,'no')">a) Extra empty transaction is added</li>
+<li onclick="pick(this,'ok')">b) The last transaction's hash is duplicated</li>
+<li onclick="pick(this,'no')">c) The tree is rebuilt in a different structure</li>
+<li onclick="pick(this,'no')">d) An error is thrown and no block is produced</li>
+</ul>
+<div class="ans" id="a-w3q4"><div class="al">Answer: (b)</div>Bitcoin handles odd leaves by duplicating the last hash. This allows the tree to always be a perfect binary tree. Note: This duplication behavior has been the source of a historical Bitcoin vulnerability (CVE-2012-2459).</div>
+<button class="rb" onclick="rv('a-w3q4',this)">Show Answer</button></div>
+
+<div class="qc"><div class="qm"><span class="qn">W3·Q5</span><span class="tag th">HOT</span></div>
+<div class="qt">Which halving event set Bitcoin's reward to <strong>3.125 BTC</strong>?</div>
+<ul class="opts">
+<li onclick="pick(this,'no')">a) 3rd Halving (2020)</li>
+<li onclick="pick(this,'ok')">b) 4th Halving (2024)</li>
+<li onclick="pick(this,'no')">c) 2nd Halving (2016)</li>
+<li onclick="pick(this,'no')">d) 5th Halving (2028)</li>
+</ul>
+<div class="ans" id="a-w3q5"><div class="al">Answer: (b)</div>Halving history: 2009=50 BTC → 2012=25 → 2016=12.5 → 2020=6.25 → <b>2024=3.125 BTC</b>. Every 210,000 blocks (~4 years).</div>
+<button class="rb" onclick="rv('a-w3q5',this)">Show Answer</button></div>
+
+<div class="qc"><div class="qm"><span class="qn">W3·Q6</span><span class="tag td">DEFN</span></div>
+<div class="qt">What is a <strong>UTXO</strong> (Unspent Transaction Output)?</div>
+<ul class="opts">
+<li onclick="pick(this,'no')">a) A mining reward given to miners</li>
+<li onclick="pick(this,'no')">b) An unverified transaction waiting in mempool</li>
+<li onclick="pick(this,'ok')">c) A discrete chunk of Bitcoin that has been received but not yet spent, used as input to new transactions</li>
+<li onclick="pick(this,'no')">d) An invalid transaction returned by the network</li>
+</ul>
+<div class="ans" id="a-w3q6"><div class="al">Answer: (c)</div>Bitcoin uses UTXO model (not account balances). Each transaction consumes UTXOs as inputs and creates new UTXOs as outputs. Your "balance" = sum of all your UTXOs. Ethereum uses account model instead.</div>
+<button class="rb" onclick="rv('a-w3q6',this)">Show Answer</button></div>
+
+<div class="qc"><div class="qm"><span class="qn">W3·Q7</span><span class="tag th">HOT</span></div>
+<div class="qt">What is the purpose of a <strong>coinbase transaction</strong>?</div>
+<ul class="opts">
+<li onclick="pick(this,'no')">a) Transaction to buy crypto on Coinbase exchange</li>
+<li onclick="pick(this,'no')">b) A transaction that reclaims lost Bitcoin</li>
+<li onclick="pick(this,'ok')">c) The first transaction in every block that creates new Bitcoin as block reward for the miner</li>
+<li onclick="pick(this,'no')">d) A transaction signed by Satoshi Nakamoto</li>
+</ul>
+<div class="ans" id="a-w3q7"><div class="al">Answer: (c)</div>Coinbase transaction has no inputs (creates Bitcoin from nothing). It rewards the miner with block subsidy + transaction fees. The coinbase contains the "extra nonce" which miners use when 32-bit nonce space is exhausted.</div>
+<button class="rb" onclick="rv('a-w3q7',this)">Show Answer</button></div>
+
+<div class="qc"><div class="qm"><span class="qn">W3·Q8</span><span class="tag tc">CALC</span></div>
+<div class="qt">Bitcoin difficulty is adjusted every <strong>2016 blocks</strong>. If blocks were being mined at 8 minutes average (faster than 10 min target), what happens to difficulty?</div>
+<ul class="opts">
+<li onclick="pick(this,'no')">a) Difficulty decreases</li>
+<li onclick="pick(this,'ok')">b) Difficulty increases (target hash value decreases)</li>
+<li onclick="pick(this,'no')">c) Difficulty stays same — only adjusted monthly</li>
+<li onclick="pick(this,'no')">d) Block time increases automatically to compensate</li>
+</ul>
+<div class="ans" id="a-w3q8"><div class="al">Answer: (b)</div>If blocks found faster than 10 min → too much hash power → <b>increase difficulty</b> (lower the target threshold). Formula: New_target = Old_target × (actual_time / 2016×10 minutes). Difficulty ∝ 1/target.</div>
+<button class="rb" onclick="rv('a-w3q8',this)">Show Answer</button></div>
+
+<div class="qc"><div class="qm"><span class="qn">W3·Q9</span><span class="tag th">HOT</span></div>
+<div class="qt">Which field in the Bitcoin block header links it to the previous block?</div>
+<ul class="opts">
+<li onclick="pick(this,'no')">a) Merkle root</li>
+<li onclick="pick(this,'no')">b) Nonce</li>
+<li onclick="pick(this,'ok')">c) Previous block hash</li>
+<li onclick="pick(this,'no')">d) Timestamp</li>
+</ul>
+<div class="ans" id="a-w3q9"><div class="al">Answer: (c)</div>Each block header contains the <b>hash of the previous block header</b>. Changing any old block would change its hash, breaking the link chain — this is what makes blockchain tamper-evident.</div>
+<button class="rb" onclick="rv('a-w3q9',this)">Show Answer</button></div>
+
+<div class="qc"><div class="qm"><span class="qn">W3·Q10</span><span class="tag th">HOT</span></div>
+<div class="qt">What does a Bitcoin miner actually compete to find?</div>
+<ul class="opts">
+<li onclick="pick(this,'no')">a) A prime number larger than the previous prime</li>
+<li onclick="pick(this,'no')">b) The private key of another miner</li>
+<li onclick="pick(this,'ok')">c) A nonce such that SHA256(SHA256(block_header)) produces a hash below the target difficulty value</li>
+<li onclick="pick(this,'no')">d) The longest possible transaction chain</li>
+</ul>
+<div class="ans" id="a-w3q10"><div class="al">Answer: (c)</div>PoW puzzle: find nonce N such that Hash(block) &lt; Target. "Below target" means the hash starts with a certain number of leading zeros. Difficulty = how many leading zeros required.</div>
+<button class="rb" onclick="rv('a-w3q10',this)">Show Answer</button></div>
+</div>
+
+<!-- ===== W4-6 ===== -->
+<div class="sec" id="w4">
+<div class="stitle"><div class="ic">2</div>Weeks 4–6: Forks, Ethereum, Consensus — BFT/Paxos</div>
+<div class="hl w"><div class="l">⚠️ Week 4–6 Pattern</div>Fork definitions, 51% attack limits, Ethereum gas/units, BFT formula (n≥3f+1 vs 2f+1) — all appear every exam.</div>
+
+<div class="qc"><div class="qm"><span class="qn">W4·Q1</span><span class="tag th">HOT</span><span class="tag tt">TRAP</span></div>
+<div class="qt">Which can a <strong>51% attacker</strong> NOT do?</div>
+<ul class="opts">
+<li onclick="pick(this,'no')">a) Reverse their own recent transactions</li>
+<li onclick="pick(this,'no')">b) Block specific transactions from confirming</li>
+<li onclick="pick(this,'ok')">c) Steal Bitcoin directly from other users' wallets</li>
+<li onclick="pick(this,'no')">d) Mine blocks faster than the rest of the network</li>
+</ul>
+<div class="ans" id="a-w4q1"><div class="al">Answer: (c)</div><b>CAN:</b> double-spend own txs, censor txs, mine competing chain, earn extra rewards.<br><b>CANNOT:</b> steal from wallets, change max supply, reverse old deeply-confirmed blocks, break cryptography.</div>
+<button class="rb" onclick="rv('a-w4q1',this)">Show Answer</button></div>
+
+<div class="qc"><div class="qm"><span class="qn">W4·Q2</span><span class="tag th">HOT</span></div>
+<div class="qt">A <strong>soft fork</strong> is defined as:</div>
+<ul class="opts">
+<li onclick="pick(this,'no')">a) A permanent chain split requiring all nodes to upgrade</li>
+<li onclick="pick(this,'ok')">b) A backward-compatible protocol upgrade where non-upgraded nodes still accept new blocks</li>
+<li onclick="pick(this,'no')">c) A temporary split when two miners find blocks simultaneously</li>
+<li onclick="pick(this,'no')">d) A fork introduced by an attacker to double spend</li>
+</ul>
+<div class="ans" id="a-w4q2"><div class="al">Answer: (b)</div>Soft fork: tightens rules, old nodes accept new blocks. Hard fork: loosens rules, old nodes reject new blocks → chain permanently splits. Examples: SegWit = soft fork. Bitcoin Cash = hard fork.</div>
+<button class="rb" onclick="rv('a-w4q2',this)">Show Answer</button></div>
+
+<div class="qc"><div class="qm"><span class="qn">W4·Q3</span><span class="tag th">HOT</span></div>
+<div class="qt">A <strong>temporary fork</strong> (natural fork) occurs when:</div>
+<ul class="opts">
+<li onclick="pick(this,'ok')">a) Two miners find valid blocks almost simultaneously, creating two competing chains</li>
+<li onclick="pick(this,'no')">b) An attacker controls 51% of hash power</li>
+<li onclick="pick(this,'no')">c) A software upgrade is applied to half the nodes</li>
+<li onclick="pick(this,'no')">d) Network connectivity is permanently lost</li>
+</ul>
+<div class="ans" id="a-w4q3"><div class="al">Answer: (a)</div>Resolved by the <b>longest chain rule</b> (most cumulative PoW). The network converges when one chain gets another block first. This is why Bitcoin recommends 6 confirmations for finality.</div>
+<button class="rb" onclick="rv('a-w4q3',this)">Show Answer</button></div>
+
+<div class="qc"><div class="qm"><span class="qn">W4·Q4</span><span class="tag td">DEFN</span></div>
+<div class="qt">What is a <strong>Sybil attack</strong> and how does PoW prevent it?</div>
+<ul class="opts">
+<li onclick="pick(this,'no')">a) Creating fake transactions — PoW prevents by signature verification</li>
+<li onclick="pick(this,'ok')">b) Creating many fake identities to gain network influence — PoW prevents by making identity creation computationally expensive</li>
+<li onclick="pick(this,'no')">c) Flooding the network with spam — PoW prevents with transaction fees</li>
+<li onclick="pick(this,'no')">d) Eavesdropping on transactions — PoW prevents via encryption</li>
+</ul>
+<div class="ans" id="a-w4q4"><div class="al">Answer: (b)</div>In Sybil attack, adversary creates thousands of fake nodes to control vote. PoW prevents this: <b>influence ∝ computational power</b>, not number of identities. Creating 1000 fake identities doesn't help without 1000× the hardware.</div>
+<button class="rb" onclick="rv('a-w4q4',this)">Show Answer</button></div>
+
+<div class="qc"><div class="qm"><span class="qn">W4·Q5</span><span class="tag th">HOT</span></div>
+<div class="qt">Bitcoin's "longest chain wins" rule actually means:</div>
+<ul class="opts">
+<li onclick="pick(this,'no')">a) The chain with the most blocks (by count)</li>
+<li onclick="pick(this,'ok')">b) The chain with the most cumulative proof-of-work (most difficulty)</li>
+<li onclick="pick(this,'no')">c) The chain with the largest transactions</li>
+<li onclick="pick(this,'no')">d) The chain chosen by the node with most connections</li>
+</ul>
+<div class="ans" id="a-w4q5"><div class="al">Answer: (b)</div>"Longest" = most cumulative work, not most blocks. Two chains of same block count but different difficulties would resolve in favor of the higher-difficulty chain.</div>
+<button class="rb" onclick="rv('a-w4q5',this)">Show Answer</button></div>
+
+<div class="qc"><div class="qm"><span class="qn">W5·Q1</span><span class="tag th">HOT</span><span class="tag tc">CALC</span></div>
+<div class="qt">Which Ethereum unit relationship is <strong>CORRECT</strong>?</div>
+<ul class="opts">
+<li onclick="pick(this,'no')">a) 1 Ether = 10⁹ Wei</li>
+<li onclick="pick(this,'ok')">b) 1 Gwei = 10⁹ Wei</li>
+<li onclick="pick(this,'no')">c) 1 Ether = 10⁶ Gwei</li>
+<li onclick="pick(this,'no')">d) 1 Finney = 10⁹ Wei</li>
+</ul>
+<div class="ans" id="a-w5q1"><div class="al">Answer: (b)</div>1 Ether = 10¹⁸ Wei (NOT 10⁹ — common trap!)<br>1 Gwei = 10⁹ Wei ✓<br>1 Ether = 10⁹ Gwei<br>Gas prices specified in Gwei. Largest denomination = Ether.</div>
+<button class="rb" onclick="rv('a-w5q1',this)">Show Answer</button></div>
+
+<div class="qc"><div class="qm"><span class="qn">W5·Q2</span><span class="tag th">HOT</span></div>
+<div class="qt">Which Ethereum operation costs <strong>zero gas</strong>?</div>
+<ul class="opts">
+<li onclick="pick(this,'no')">a) Calling a function that writes to storage</li>
+<li onclick="pick(this,'ok')">b) Reading/querying blockchain state via a view function</li>
+<li onclick="pick(this,'no')">c) Emitting an event</li>
+<li onclick="pick(this,'no')">d) Transferring Ether to another address</li>
+</ul>
+<div class="ans" id="a-w5q2"><div class="al">Answer: (b)</div>In Ethereum: <b>read operations (view/pure functions) = free (0 gas)</b> when called externally. State-modifying operations (write storage, transfer ETH, emit events) cost gas. This is because reads don't require consensus.</div>
+<button class="rb" onclick="rv('a-w5q2',this)">Show Answer</button></div>
+
+<div class="qc"><div class="qm"><span class="qn">W5·Q3</span><span class="tag th">HOT</span></div>
+<div class="qt">Which consensus mechanism uses <strong>Intel SGX trusted hardware</strong> for random wait time generation?</div>
+<ul class="opts">
+<li onclick="pick(this,'no')">a) Proof of Stake</li>
+<li onclick="pick(this,'no')">b) Proof of Burn</li>
+<li onclick="pick(this,'ok')">c) Proof of Elapsed Time (PoET)</li>
+<li onclick="pick(this,'no')">d) Delegated Proof of Stake</li>
+</ul>
+<div class="ans" id="a-w5q3"><div class="al">Answer: (c)</div>PoET (used in Hyperledger Sawtooth): Each node gets a random wait time from trusted SGX enclave. Shortest wait time wins. Fair without computational waste. Verifiable because SGX produces signed proof.</div>
+<button class="rb" onclick="rv('a-w5q3',this)">Show Answer</button></div>
+
+<div class="qc"><div class="qm"><span class="qn">W5·Q4</span><span class="tag td">DEFN</span></div>
+<div class="qt">What is the <strong>EVM (Ethereum Virtual Machine)</strong> and why is it important?</div>
+<ul class="opts">
+<li onclick="pick(this,'no')">a) A virtual mining rig that runs Ethereum node software</li>
+<li onclick="pick(this,'no')">b) The hardware infrastructure for Ethereum data centers</li>
+<li onclick="pick(this,'ok')">c) A sandboxed, deterministic runtime environment that executes smart contracts identically on all nodes</li>
+<li onclick="pick(this,'no')">d) An emulator for running Bitcoin scripts on Ethereum</li>
+</ul>
+<div class="ans" id="a-w5q4"><div class="al">Answer: (c)</div>EVM ensures <b>deterministic execution</b>: same code + same input = same output on ALL nodes worldwide. This is essential for consensus. EVM is Turing-complete but gas-bounded (prevents infinite loops).</div>
+<button class="rb" onclick="rv('a-w5q4',this)">Show Answer</button></div>
+
+<div class="qc"><div class="qm"><span class="qn">W5·Q5</span><span class="tag td">DEFN</span></div>
+<div class="qt">What is <strong>Proof of Burn</strong> in blockchain consensus?</div>
+<ul class="opts">
+<li onclick="pick(this,'no')">a) Destroying hardware to prove commitment</li>
+<li onclick="pick(this,'ok')">b) Sending cryptocurrency to a verifiably unspendable address to gain mining rights proportional to burned amount</li>
+<li onclick="pick(this,'no')">c) Burning electricity via PoW computation</li>
+<li onclick="pick(this,'no')">d) A penalty mechanism for malicious validators in PoS</li>
+</ul>
+<div class="ans" id="a-w5q5"><div class="al">Answer: (b)</div>PoB: burn coins to unspendable "eater address" → gain virtual mining power proportional to burned coins. Demonstrates long-term commitment (cannot recover burned coins). Alternative to PoW's energy waste.</div>
+<button class="rb" onclick="rv('a-w5q5',this)">Show Answer</button></div>
+
+<div class="qc"><div class="qm"><span class="qn">W6·Q1</span><span class="tag th">HOT</span><span class="tag tc">CALC</span></div>
+<div class="qt">A system has <strong>7 nodes</strong> under Byzantine Fault Tolerance model. Max faulty nodes tolerated?</div>
+<ul class="opts">
+<li onclick="pick(this,'no')">a) 1</li>
+<li onclick="pick(this,'ok')">b) 2</li>
+<li onclick="pick(this,'no')">c) 3</li>
+<li onclick="pick(this,'no')">d) 4</li>
+</ul>
+<div class="ans" id="a-w6q1"><div class="al">Answer: (b) — n ≥ 3f+1</div>7 ≥ 3f+1 → 3f ≤ 6 → f ≤ 2. Max <b>2 Byzantine faults</b>.<br>Note: For crash faults (Paxos): n ≥ 2f+1 → 7 ≥ 2f+1 → f ≤ 3. Different answer!</div>
+<button class="rb" onclick="rv('a-w6q1',this)">Show Answer</button></div>
+
+<div class="qc"><div class="qm"><span class="qn">W6·Q2</span><span class="tag tc">CALC</span></div>
+<div class="qt">What is the <strong>minimum number of nodes</strong> needed to tolerate 3 Byzantine faults?</div>
+<ul class="opts">
+<li onclick="pick(this,'no')">a) 6</li>
+<li onclick="pick(this,'no')">b) 7</li>
+<li onclick="pick(this,'ok')">c) 10</li>
+<li onclick="pick(this,'no')">d) 9</li>
+</ul>
+<div class="ans" id="a-w6q2"><div class="al">Answer: (c) — n = 3f+1</div>n = 3(3)+1 = <b>10 nodes</b> minimum for BFT with f=3.<br>For crash faults: n = 2(3)+1 = 7 nodes.</div>
+<button class="rb" onclick="rv('a-w6q2',this)">Show Answer</button></div>
+
+<div class="qc"><div class="qm"><span class="qn">W6·Q3</span><span class="tag th">HOT</span><span class="tag tt">TRAP</span></div>
+<div class="qt">In Paxos, if fewer than a quorum of acceptors respond, which property is affected?</div>
+<ul class="opts">
+<li onclick="pick(this,'no')">a) Safety — conflicting values may be decided</li>
+<li onclick="pick(this,'ok')">b) Liveness — no value can be decided, but no bad decisions are made</li>
+<li onclick="pick(this,'no')">c) Both safety and liveness simultaneously</li>
+<li onclick="pick(this,'no')">d) Neither — Paxos always proceeds</li>
+</ul>
+<div class="ans" id="a-w6q3"><div class="al">Answer: (b)</div><b>Safety</b> = "nothing bad happens" (never violated in Paxos).<br><b>Liveness</b> = "something good eventually happens" (violated if no quorum).<br>Without majority: cannot decide → liveness affected. But conflicting decisions never occur → safety preserved.</div>
+<button class="rb" onclick="rv('a-w6q3',this)">Show Answer</button></div>
+
+<div class="qc"><div class="qm"><span class="qn">W6·Q4</span><span class="tag th">HOT</span></div>
+<div class="qt">What problem does <strong>Multi-Paxos</strong> solve over basic Paxos?</div>
+<ul class="opts">
+<li onclick="pick(this,'no')">a) Handles Byzantine faults unlike basic Paxos</li>
+<li onclick="pick(this,'ok')">b) Eliminates the repeated Prepare phase by electing a stable leader for multiple rounds</li>
+<li onclick="pick(this,'no')">c) Reduces the number of nodes needed for consensus</li>
+<li onclick="pick(this,'no')">d) Replaces Paxos entirely with a simpler algorithm</li>
+</ul>
+<div class="ans" id="a-w6q4"><div class="al">Answer: (b)</div>Basic Paxos: every instance requires full Prepare → Promise → Accept → Accepted (2 round-trips).<br>Multi-Paxos: elect stable leader once → only Accept → Accepted needed (1 round-trip) for subsequent slots.</div>
+<button class="rb" onclick="rv('a-w6q4',this)">Show Answer</button></div>
+
+<div class="qc"><div class="qm"><span class="qn">W6·Q5</span><span class="tag th">HOT</span></div>
+<div class="qt">Why does PBFT have <strong>O(n²) communication complexity</strong>?</div>
+<ul class="opts">
+<li onclick="pick(this,'no')">a) Each replica must store O(n) copies of each message</li>
+<li onclick="pick(this,'ok')">b) In the Prepare and Commit phases, every replica must send messages to every other replica</li>
+<li onclick="pick(this,'no')">c) The leader must do O(n²) cryptographic operations</li>
+<li onclick="pick(this,'no')">d) View change requires O(n²) leader candidates</li>
+</ul>
+<div class="ans" id="a-w6q5"><div class="al">Answer: (b)</div>PBFT phases: Pre-prepare (1→n), <b>Prepare (n→n²)</b>, <b>Commit (n→n²)</b>. Each of n replicas messages all n replicas = n² messages. This is why PBFT doesn't scale beyond ~100 nodes.</div>
+<button class="rb" onclick="rv('a-w6q5',this)">Show Answer</button></div>
+
+<div class="qc"><div class="qm"><span class="qn">W6·Q6</span><span class="tag th">HOT</span></div>
+<div class="qt">PBFT requires <strong>n ≥ 3f+1</strong>. Why is 3f+1 specifically required (not 2f+1)?</div>
+<ul class="opts">
+<li onclick="pick(this,'no')">a) To ensure at least f+1 honest nodes can form a quorum</li>
+<li onclick="pick(this,'ok')">b) To ensure quorum (2f+1) always contains at least f+1 honest nodes, even if f nodes are Byzantine and f are crashed</li>
+<li onclick="pick(this,'no')">c) To handle network partitions with 3 segments</li>
+<li onclick="pick(this,'no')">d) Because 3 is the minimum for triangle-based routing</li>
+</ul>
+<div class="ans" id="a-w6q6"><div class="al">Answer: (b)</div>With f Byzantine nodes: worst case = f faulty + f crashed/slow + (n-2f) honest respond. For quorum (2f+1) to have majority honest: n-2f &gt; f → n &gt; 3f → n ≥ 3f+1.</div>
+<button class="rb" onclick="rv('a-w6q6',this)">Show Answer</button></div>
+</div>
+
+<!-- ===== W7-9 ===== -->
+<div class="sec" id="w7">
+<div class="stitle"><div class="ic">3</div>Weeks 7–9: Hyperledger, Algorand, Bitcoin-NG, ByzCoin</div>
+<div class="hl w"><div class="l">⚠️ Week 7–9 Pattern</div>Fabric transaction flow (Endorse→Order→Validate), MSP vs CA, Algorand VRF (j=0 meaning), Bitcoin-NG key-block vs micro-block all heavily tested.</div>
+
+<div class="qc"><div class="qm"><span class="qn">W7·Q1</span><span class="tag th">HOT</span></div>
+<div class="qt">Correct Hyperledger Fabric transaction flow order:</div>
+<ul class="opts">
+<li onclick="pick(this,'no')">a) Order → Endorse → Validate</li>
+<li onclick="pick(this,'ok')">b) Endorse → Order → Validate</li>
+<li onclick="pick(this,'no')">c) Validate → Endorse → Order</li>
+<li onclick="pick(this,'no')">d) Endorse → Validate → Order</li>
+</ul>
+<div class="ans" id="a-w7q1"><div class="al">Answer: (b)</div><b>E-O-V:</b><br>1. <b>Endorse</b>: Client sends proposal to endorsing peers who simulate & sign.<br>2. <b>Order</b>: Orderer sequences transactions into blocks (no execution).<br>3. <b>Validate</b>: All peers check endorsement policy + MVCC (read-write set) → update world state.</div>
+<button class="rb" onclick="rv('a-w7q1',this)">Show Answer</button></div>
+
+<div class="qc"><div class="qm"><span class="qn">W7·Q2</span><span class="tag th">HOT</span><span class="tag tt">TRAP</span></div>
+<div class="qt">What is the role of <strong>MSP (Membership Service Provider)</strong> in Hyperledger Fabric?</div>
+<ul class="opts">
+<li onclick="pick(this,'no')">a) Issues X.509 certificates to participants (that's the CA)</li>
+<li onclick="pick(this,'ok')">b) Defines which identities are trusted and maps certificates to roles (admin, peer, client)</li>
+<li onclick="pick(this,'no')">c) Executes chaincode</li>
+<li onclick="pick(this,'no')">d) Orders transactions into blocks</li>
+</ul>
+<div class="ans" id="a-w7q2"><div class="al">Answer: (b)</div>MSP ≠ CA. <b>CA issues certificates</b>. <b>MSP uses those certificates</b> to determine membership and roles. MSP defines: which CAs are trusted, which certificate attributes map to which roles, revocation lists.</div>
+<button class="rb" onclick="rv('a-w7q2',this)">Show Answer</button></div>
+
+<div class="qc"><div class="qm"><span class="qn">W7·Q3</span><span class="tag th">HOT</span></div>
+<div class="qt">What is the purpose of <strong>Channels</strong> in Hyperledger Fabric?</div>
+<ul class="opts">
+<li onclick="pick(this,'no')">a) To increase block production speed</li>
+<li onclick="pick(this,'ok')">b) To create logically separate ledgers among specific subsets of participants with data isolation</li>
+<li onclick="pick(this,'no')">c) To replace the consensus mechanism</li>
+<li onclick="pick(this,'no')">d) To store private keys securely</li>
+</ul>
+<div class="ans" id="a-w7q3"><div class="al">Answer: (b)</div>Channels = private "subnets" within Fabric network. Each channel has its own ledger, chaincode, and ordering service. Organizations not on a channel cannot see its transactions. Like private chat rooms within a larger platform.</div>
+<button class="rb" onclick="rv('a-w7q3',this)">Show Answer</button></div>
+
+<div class="qc"><div class="qm"><span class="qn">W7·Q4</span><span class="tag th">HOT</span></div>
+<div class="qt">In Fabric, the <strong>Orderer</strong> service's role is:</div>
+<ul class="opts">
+<li onclick="pick(this,'no')">a) Verify signatures and execute chaincode</li>
+<li onclick="pick(this,'no')">b) Store the world state database</li>
+<li onclick="pick(this,'ok')">c) Sequence transactions into blocks (does NOT validate/execute transactions)</li>
+<li onclick="pick(this,'no')">d) Issue membership certificates</li>
+</ul>
+<div class="ans" id="a-w7q4"><div class="al">Answer: (c)</div>Orderer only sequences — it creates a deterministic order of transactions. It does NOT execute chaincode or validate business logic. After ordering, peers do the validation (endorsement policy check + MVCC).</div>
+<button class="rb" onclick="rv('a-w7q4',this)">Show Answer</button></div>
+
+<div class="qc"><div class="qm"><span class="qn">W7·Q5</span><span class="tag th">HOT</span></div>
+<div class="qt">Hyperledger Fabric's <strong>world state</strong> vs <strong>blockchain</strong>:</div>
+<ul class="opts">
+<li onclick="pick(this,'no')">a) World state stores transaction history; blockchain stores current values</li>
+<li onclick="pick(this,'ok')">b) World state stores current key-value snapshot (fast reads); blockchain stores full transaction history (immutable audit log)</li>
+<li onclick="pick(this,'no')">c) They store identical data in different formats</li>
+<li onclick="pick(this,'no')">d) World state is encrypted; blockchain is plaintext</li>
+</ul>
+<div class="ans" id="a-w7q5"><div class="al">Answer: (b)</div>World state (CouchDB/LevelDB) = current state of all assets, queryable. Blockchain = append-only log of all transactions. World state can be rebuilt from blockchain. CouchDB enables rich JSON queries; LevelDB only simple key lookups.</div>
+<button class="rb" onclick="rv('a-w7q5',this)">Show Answer</button></div>
+
+<div class="qc"><div class="qm"><span class="qn">W7·Q6</span><span class="tag th">HOT</span></div>
+<div class="qt">Which statement about Hyperledger Fabric is <strong>FALSE</strong>?</div>
+<ul class="opts">
+<li onclick="pick(this,'no')">a) Fabric uses modular design with pluggable consensus</li>
+<li onclick="pick(this,'no')">b) Chaincode is Fabric's smart contract (written in Go/Java/Node.js)</li>
+<li onclick="pick(this,'ok')">c) Fabric requires a native cryptocurrency to pay for transactions</li>
+<li onclick="pick(this,'no')">d) Fabric supports private data collections for confidentiality</li>
+</ul>
+<div class="ans" id="a-w7q6"><div class="al">Answer: (c) — FALSE</div>Fabric does NOT require a native cryptocurrency. This is a key difference from Ethereum. Fabric uses identity and policy-based access control instead of economic incentives.</div>
+<button class="rb" onclick="rv('a-w7q6',this)">Show Answer</button></div>
+
+<div class="qc"><div class="qm"><span class="qn">W8·Q1</span><span class="tag th">HOT</span></div>
+<div class="qt">In <strong>Bitcoin-NG</strong>, what are the two types of blocks and their roles?</div>
+<ul class="opts">
+<li onclick="pick(this,'no')">a) Leader-blocks (elect leader) and transaction-blocks (transactions) — both mined via PoW</li>
+<li onclick="pick(this,'ok')">b) Key-blocks (PoW, elect epoch leader) and micro-blocks (no PoW, contain transactions, produced by leader)</li>
+<li onclick="pick(this,'no')">c) Mining-blocks (for miners) and user-blocks (for users)</li>
+<li onclick="pick(this,'no')">d) Checkpoint blocks (finality) and normal blocks (transactions)</li>
+</ul>
+<div class="ans" id="a-w8q1"><div class="al">Answer: (b)</div>Bitcoin-NG separates leader election from transaction processing:<br><b>Key-block</b>: PoW puzzle → winner becomes epoch leader (contains public key).<br><b>Micro-blocks</b>: Leader signs and broadcasts these rapidly (~every few seconds) with transactions. No PoW needed.</div>
+<button class="rb" onclick="rv('a-w8q1',this)">Show Answer</button></div>
+
+<div class="qc"><div class="qm"><span class="qn">W8·Q2</span><span class="tag th">HOT</span></div>
+<div class="qt">What problem does <strong>ByzCoin</strong> solve that Bitcoin-NG has?</div>
+<ul class="opts">
+<li onclick="pick(this,'no')">a) Bitcoin-NG lacks transaction privacy</li>
+<li onclick="pick(this,'ok')">b) Bitcoin-NG's faulty leader can produce invalid micro-blocks with no accountability — ByzCoin adds PBFT-like collective signing for immediate finality</li>
+<li onclick="pick(this,'no')">c) Bitcoin-NG is too slow — ByzCoin increases block size</li>
+<li onclick="pick(this,'no')">d) Bitcoin-NG has no Merkle tree structure</li>
+</ul>
+<div class="ans" id="a-w8q2"><div class="al">Answer: (b)</div>Bitcoin-NG: faulty leader can create bad micro-blocks, detected only when next leader creates key-block. ByzCoin: uses CoSi (collective signing) — a committee of recent key-block winners signs each micro-block → immediate Byzantine fault tolerance.</div>
+<button class="rb" onclick="rv('a-w8q2',this)">Show Answer</button></div>
+
+<div class="qc"><div class="qm"><span class="qn">W8·Q3</span><span class="tag th">HOT</span></div>
+<div class="qt">CoSi (Collective Signing) reduces PBFT communication from O(n²) to:</div>
+<ul class="opts">
+<li onclick="pick(this,'no')">a) O(n)</li>
+<li onclick="pick(this,'no')">b) O(n log n)</li>
+<li onclick="pick(this,'ok')">c) O(n) messages and O(log n) latency via tree-based multi-signature aggregation</li>
+<li onclick="pick(this,'no')">d) O(1) — constant time</li>
+</ul>
+<div class="ans" id="a-w8q3"><div class="al">Answer: (c)</div>CoSi uses a tree structure: leader broadcasts to tree, signatures aggregate up the tree (Schnorr signatures are aggregatable). Result: O(n) messages total, O(log n) communication rounds. Verifier sees one aggregated signature.</div>
+<button class="rb" onclick="rv('a-w8q3',this)">Show Answer</button></div>
+
+<div class="qc"><div class="qm"><span class="qn">W9·Q1</span><span class="tag th">HOT</span></div>
+<div class="qt">In Algorand's VRF cryptographic sortition, if a node receives <strong>j = 0</strong>, it means:</div>
+<ul class="opts">
+<li onclick="pick(this,'no')">a) Node is selected as the block proposer</li>
+<li onclick="pick(this,'ok')">b) Node is NOT part of the consensus committee for this round</li>
+<li onclick="pick(this,'no')">c) Node has voting weight of 0 in committee</li>
+<li onclick="pick(this,'no')">d) VRF seed was invalid</li>
+</ul>
+<div class="ans" id="a-w9q1"><div class="al">Answer: (b)</div>Algorand VRF outputs: (hash, proof, j). <b>j=0 → not in committee</b>. j>0 → in committee with voting weight j. Nodes only reveal their role when they broadcast — prevents targeted attacks before selection is known.</div>
+<button class="rb" onclick="rv('a-w9q1',this)">Show Answer</button></div>
+
+<div class="qc"><div class="qm"><span class="qn">W9·Q2</span><span class="tag th">HOT</span></div>
+<div class="qt">Algorand's security assumption tolerates up to what fraction of malicious stake?</div>
+<ul class="opts">
+<li onclick="pick(this,'no')">a) 33% (1/3)</li>
+<li onclick="pick(this,'no')">b) 50% (1/2)</li>
+<li onclick="pick(this,'ok')">c) Less than 1/3 of total stake (similar to BFT)</li>
+<li onclick="pick(this,'no')">d) Any amount — Algorand has no Byzantine assumption</li>
+</ul>
+<div class="ans" id="a-w9q2"><div class="al">Answer: (c)</div>Algorand assumes honest stake &gt; 2/3 of total stake. Adversary can control &lt;1/3 of stake. This maps to classic BFT assumption. Difference: Algorand achieves this at scale through VRF-based random selection.</div>
+<button class="rb" onclick="rv('a-w9q2',this)">Show Answer</button></div>
+
+<div class="qc"><div class="qm"><span class="qn">W9·Q3</span><span class="tag th">HOT</span></div>
+<div class="qt">In Hyperledger Indy, who are <strong>Stewards</strong>?</div>
+<ul class="opts">
+<li onclick="pick(this,'no')">a) Regular users who hold credentials</li>
+<li onclick="pick(this,'no')">b) Organizations that issue verifiable credentials (like universities)</li>
+<li onclick="pick(this,'ok')">c) Trusted institutions that run RBFT validator nodes on the Indy network and can approve Trust Anchors</li>
+<li onclick="pick(this,'no')">d) Developers who write Indy chaincode</li>
+</ul>
+<div class="ans" id="a-w9q3"><div class="al">Answer: (c)</div>Hierarchy: <b>Stewards</b> (run validators, most trusted) → <b>Trust Anchors</b> (approved by Stewards, issue credentials, e.g., universities) → <b>Users/Holders</b> (receive credentials). Stewards ≠ Trust Anchors.</div>
+<button class="rb" onclick="rv('a-w9q3',this)">Show Answer</button></div>
+
+<div class="qc"><div class="qm"><span class="qn">W9·Q4</span><span class="tag th">HOT</span></div>
+<div class="qt">What is the <strong>DID (Decentralized Identifier)</strong> URI structure?</div>
+<ul class="opts">
+<li onclick="pick(this,'ok')">a) did:method:method-specific-identifier (e.g., did:sov:WRfXPg8dantKVubE3HX8pw)</li>
+<li onclick="pick(this,'no')">b) did://method/identifier</li>
+<li onclick="pick(this,'no')">c) method:did:identifier</li>
+<li onclick="pick(this,'no')">d) identifier.method.did</li>
+</ul>
+<div class="ans" id="a-w9q4"><div class="al">Answer: (a)</div>DID format: <b>did:[method]:[method-specific-id]</b><br>"did" = scheme, "method" = which DID system (sov=Sovrin/Indy, eth=Ethereum, etc.), last part = unique ID on that ledger.<br>Resolves to a DID Document containing public keys and service endpoints.</div>
+<button class="rb" onclick="rv('a-w9q4',this)">Show Answer</button></div>
+
+<div class="qc"><div class="qm"><span class="qn">W9·Q5</span><span class="tag th">HOT</span></div>
+<div class="qt">In Self-Sovereign Identity (SSI), the trust triangle involves:</div>
+<ul class="opts">
+<li onclick="pick(this,'no')">a) Miner, Node, User</li>
+<li onclick="pick(this,'ok')">b) Issuer (issues credential), Holder (stores credential), Verifier (checks credential)</li>
+<li onclick="pick(this,'no')">c) Admin, Peer, Client</li>
+<li onclick="pick(this,'no')">d) Steward, Trust Anchor, Validator</li>
+</ul>
+<div class="ans" id="a-w9q5"><div class="al">Answer: (b)</div><b>Issuer</b> (e.g., university) → issues VC to <b>Holder</b> (student) → Holder presents to <b>Verifier</b> (employer). Verifier checks on ledger (Indy) that issuer's schema/definition is valid. Issuer never involved in presentation.</div>
+<button class="rb" onclick="rv('a-w9q5',this)">Show Answer</button></div>
+
+<div class="qc"><div class="qm"><span class="qn">W9·Q6</span><span class="tag td">DEFN</span></div>
+<div class="qt">What does <strong>support_revocation: False</strong> mean in a Hyperledger Indy credential definition?</div>
+<ul class="opts">
+<li onclick="pick(this,'no')">a) The credential can never be issued</li>
+<li onclick="pick(this,'ok')">b) The credential definition does not support revocation — once issued, credentials with this definition cannot be revoked</li>
+<li onclick="pick(this,'no')">c) The credential is automatically revoked after issue</li>
+<li onclick="pick(this,'no')">d) Revocation requires manual intervention</li>
+</ul>
+<div class="ans" id="a-w9q6"><div class="al">Answer: (b)</div>Setting support_revocation=False when creating a credential definition means the resulting credentials cannot be revoked later. Once set, cannot be changed. For revocable credentials, support_revocation=True and a revocation registry must be created.</div>
+<button class="rb" onclick="rv('a-w9q6',this)">Show Answer</button></div>
+
+<div class="qc"><div class="qm"><span class="qn">W9·ByzCoin·Q1</span><span class="tag th">HOT</span></div>
+<div class="qt">ByzCoin improves upon PBFT by integrating PoW and CoSi. Which correctly describes improvements for n nodes?</div>
+<div class="msq-note">MSQ — select all correct</div>
+<ul class="opts">
+<li onclick="pick(this,'no')">a) ByzCoin reduces communication from O(n²) to O(n) — WRONG (reduces to O(n) messages but latency is O(log n))</li>
+<li onclick="pick(this,'ok')">b) ByzCoin reduces consensus latency from O(n²) to O(log n) via tree-based structure</li>
+<li onclick="pick(this,'ok')">c) ByzCoin reduces verification from O(n) to O(1) via Schnorr multi-signatures</li>
+<li onclick="pick(this,'no')">d) ByzCoin eliminates need for leader node — WRONG (still needs leader)</li>
+</ul>
+<div class="ans" id="a-byzcoin1"><div class="al">Answer: (b) and (c)</div>PBFT = O(n²) messages. ByzCoin CoSi tree = O(n) total messages, O(log n) latency. Schnorr multi-sig aggregates n signatures into 1 → O(1) verification for any third party. Leader still exists — just changes each key-block round.</div>
+<button class="rb" onclick="rv('a-byzcoin1',this)">Show Answer</button></div>
+
+<div class="qc"><div class="qm"><span class="qn">W9·SSO·Q1</span><span class="tag tt">TRAP</span></div>
+<div class="qt">Which is <strong>NOT true</strong> about Single Sign-On (SSO)?</div>
+<ul class="opts">
+<li onclick="pick(this,'no')">a) A single user can access multiple services with one login</li>
+<li onclick="pick(this,'no')">b) A single identity provider typically maintains the identity</li>
+<li onclick="pick(this,'no')">c) During authentication, identity is not directly exposed to all services</li>
+<li onclick="pick(this,'ok')">d) Identity holders use the Identity Provider to authenticate other identity holders</li>
+</ul>
+<div class="ans" id="a-sso1"><div class="al">Answer: (d) — NOT TRUE</div>In SSO: the Identity Provider (IdP) authenticates users to services — NOT other users. The IdP authenticates, not the users. (a), (b), (c) are all valid SSO properties. SSO is centralized — distinct from decentralized SSI/DID model.</div>
+<button class="rb" onclick="rv('a-sso1',this)">Show Answer</button></div>
+
+<div class="qc"><div class="qm"><span class="qn">W9·ALGORAND·Q1</span><span class="tag th">HOT</span></div>
+<div class="qt">If Algorand's BA* protocol fails to reach final consensus in one round, how does it resolve?</div>
+<div class="msq-note">MSQ — select all correct</div>
+<ul class="opts">
+<li onclick="pick(this,'ok')">a) Runs BA* repeatedly with timeout, then moves to next round with new randomly selected committee</li>
+<li onclick="pick(this,'no')">b) Exactly 10 executions of BA* required to force consensus under weak synchrony</li>
+<li onclick="pick(this,'ok')">c) Running BA* 2–3 times is mathematically sufficient even with up to 49% malicious participants</li>
+<li onclick="pick(this,'no')">d) Permanently halts blockchain to prevent fork</li>
+</ul>
+<div class="ans" id="a-algorand1"><div class="al">Answer: (a) and (c)</div>Algorand: if tentative consensus, timeout triggers → new BA* round with fresh committee via VRF. Mathematical proof: 2-3 BA* iterations sufficient for finality even with 49% malicious. This gives Algorand near-instant finality without sacrificing safety.</div>
+<button class="rb" onclick="rv('a-algorand1',this)">Show Answer</button></div>
+
+<div class="qc"><div class="qm"><span class="qn">W7·PBFT·Q1</span><span class="tag th">HOT</span></div>
+<div class="qt">What mechanism ensures <strong>liveness in PBFT</strong> when the primary (leader) becomes faulty?</div>
+<ul class="opts">
+<li onclick="pick(this,'no')">a) Increasing the block size limit</li>
+<li onclick="pick(this,'ok')">b) Timeout-based view change protocol — replicas detect unresponsive primary and elect a new one</li>
+<li onclick="pick(this,'no')">c) Switching to Proof of Work temporarily</li>
+<li onclick="pick(this,'no')">d) Re-broadcasting all pending transactions</li>
+</ul>
+<div class="ans" id="a-pbft-live"><div class="al">Answer: (b)</div>PBFT view change: if replicas wait too long without progress (timeout), they broadcast VIEW-CHANGE message. Once 2f+1 VIEW-CHANGE messages received, new view starts with new primary. This is how PBFT achieves liveness despite Byzantine primary.</div>
+<button class="rb" onclick="rv('a-pbft-live',this)">Show Answer</button></div>
+
+<div class="qc"><div class="qm"><span class="qn">W7·FABRIC·Q1</span><span class="tag th">HOT</span></div>
+<div class="qt">What are the key architectural features of Hyperledger Fabric?</div>
+<div class="msq-note">MSQ — select all correct</div>
+<ul class="opts">
+<li onclick="pick(this,'ok')">a) Modular design with pluggable consensus components</li>
+<li onclick="pick(this,'no')">b) Mandatory native cryptocurrency for paying fees</li>
+<li onclick="pick(this,'ok')">c) Separation of transaction endorsement from ordering</li>
+<li onclick="pick(this,'no')">d) Public anonymous participation (like Bitcoin)</li>
+</ul>
+<div class="ans" id="a-fabricq1"><div class="al">Answer: (a) and (c)</div>Fabric: modular (pluggable consensus: Raft, Kafka, custom), separates endorsement from ordering (unique to Fabric). NO native token, NO anonymous participation — it's permissioned with known identities via MSP/CA.</div>
+<button class="rb" onclick="rv('a-fabricq1',this)">Show Answer</button></div>
+
+<div class="qc"><div class="qm"><span class="qn">W7·BYSANTIUM·Q1</span><span class="tag th">HOT</span></div>
+<div class="qt">What conditions must hold in a Byzantine quorum system to ensure safety?</div>
+<ul class="opts">
+<li onclick="pick(this,'ok')">a) Any two quorums must intersect in at least one correct (honest) replica</li>
+<li onclick="pick(this,'no')">b) Quorums may be completely disjoint to increase throughput</li>
+<li onclick="pick(this,'no')">c) Quorum size must equal exactly half the network</li>
+<li onclick="pick(this,'no')">d) Faulty replicas must form a standalone quorum</li>
+</ul>
+<div class="ans" id="a-bizquorum"><div class="al">Answer: (a)</div>Quorum intersection property: any two quorums must share at least f+1 nodes. Since at most f nodes are Byzantine, at least one honest node is in both quorums. This prevents "split-brain" — two different values being simultaneously committed.</div>
+<button class="rb" onclick="rv('a-bizquorum',this)">Show Answer</button></div>
+
+</div>
+
+<!-- ===== W10-12 ===== -->
+<div class="sec" id="w10">
+<div class="stitle"><div class="ic">4</div>Weeks 10–12: Payment Channels, Privacy, Attacks, Applications</div>
+<div class="hl w"><div class="l">⚠️ Week 10–12 Pattern</div>HTLC (atomic swaps), Eclipse attack mechanics, selfish mining calculation, privacy techniques (chaff coins/mixins), Project Ubin, blockchain trilemma.</div>
+
+<div class="qc"><div class="qm"><span class="qn">W10·Q1</span><span class="tag th">HOT</span></div>
+<div class="qt">HTLC (Hash Timelock Contract) — what happens if the secret is <strong>NOT revealed</strong> before timeout?</div>
+<ul class="opts">
+<li onclick="pick(this,'no')">a) Funds are permanently locked</li>
+<li onclick="pick(this,'no')">b) Funds auto-transferred to recipient after extra delay</li>
+<li onclick="pick(this,'ok')">c) Sender gets a refund — funds returned to original sender</li>
+<li onclick="pick(this,'no')">d) Contract is re-executed with new parameters</li>
+</ul>
+<div class="ans" id="a-w10q1"><div class="al">Answer: (c)</div>HTLC two paths: (1) Reveal correct hash preimage (secret) before timeout → receiver gets funds. (2) Timeout expires without secret → <b>sender gets refund</b>. Neither party loses — either swap completes or reverts. Basis of Lightning Network and atomic cross-chain swaps.</div>
+<button class="rb" onclick="rv('a-w10q1',this)">Show Answer</button></div>
+
+<div class="qc"><div class="qm"><span class="qn">W10·Q2</span><span class="tag th">HOT</span></div>
+<div class="qt">In a <strong>Lightning Network payment channel</strong>, what happens on-chain vs off-chain?</div>
+<ul class="opts">
+<li onclick="pick(this,'no')">a) All payments recorded on blockchain for auditability</li>
+<li onclick="pick(this,'ok')">b) Only channel open (funding) and channel close (settlement) are on-chain; intermediate payments are off-chain</li>
+<li onclick="pick(this,'no')">c) Every 100 payments, a summary is recorded on-chain</li>
+<li onclick="pick(this,'no')">d) Lightning only works for Bitcoin amounts over 0.1 BTC</li>
+</ul>
+<div class="ans" id="a-w10q2"><div class="al">Answer: (b)</div>Lightning Network: open channel (1 on-chain tx) → unlimited instant off-chain payments → close channel (1 on-chain tx settling final balance). Scales Bitcoin by orders of magnitude. Uses HTLCs for routing multi-hop payments.</div>
+<button class="rb" onclick="rv('a-w10q2',this)">Show Answer</button></div>
+
+<div class="qc"><div class="qm"><span class="qn">W10·Q3</span><span class="tag th">HOT</span></div>
+<div class="qt">What makes HTLC <strong>atomic</strong> in cross-chain swaps?</div>
+<ul class="opts">
+<li onclick="pick(this,'no')">a) Both swaps happen in the same block</li>
+<li onclick="pick(this,'ok')">b) Either both transfers complete (secret revealed) or both revert (timeout) — no partial state possible</li>
+<li onclick="pick(this,'no')">c) A trusted escrow atomizes the swap</li>
+<li onclick="pick(this,'no')">d) Both chains use the same consensus protocol</li>
+</ul>
+<div class="ans" id="a-w10q3"><div class="al">Answer: (b)</div>Atomicity: Alice locks BTC with hash H, Bob locks ETH with same hash H. If Alice reveals secret S (where H=SHA256(S)), Bob's ETH is released. If not, both revert. Cannot have half-swap. No trusted third party needed.</div>
+<button class="rb" onclick="rv('a-w10q3',this)">Show Answer</button></div>
+
+<div class="qc"><div class="qm"><span class="qn">W10·Q4</span><span class="tag td">DEFN</span></div>
+<div class="qt">What is the <strong>Blockchain Trilemma</strong> (Performance Triangle)?</div>
+<ul class="opts">
+<li onclick="pick(this,'no')">a) Trade-off between Throughput, Latency, and Cost</li>
+<li onclick="pick(this,'ok')">b) You can achieve at most two of: Scalability, Security, and Decentralization simultaneously</li>
+<li onclick="pick(this,'no')">c) Trade-off between PoW, PoS, and PBFT consensus mechanisms</li>
+<li onclick="pick(this,'no')">d) Trade-off between Consistency, Availability, and Partition Tolerance (CAP theorem)</li>
+</ul>
+<div class="ans" id="a-w10q4"><div class="al">Answer: (b)</div><b>Blockchain Trilemma</b>: Scalability + Security + Decentralization — pick 2.<br>Bitcoin = Secure + Decentralized (not scalable).<br>Fabric = Secure + Scalable (not decentralized — permissioned).<br>Some L1s sacrifice security for speed.</div>
+<button class="rb" onclick="rv('a-w10q4',this)">Show Answer</button></div>
+
+<div class="qc"><div class="qm"><span class="qn">W10·Q5</span><span class="tag th">HOT</span></div>
+<div class="qt">Project Ubin Phase 3 (DvP) main objective was:</div>
+<ul class="opts">
+<li onclick="pick(this,'no')">a) Retail CBDC for Singapore citizens</li>
+<li onclick="pick(this,'ok')">b) Atomic Delivery-versus-Payment: simultaneous exchange of digital securities and cash across different blockchain systems</li>
+<li onclick="pick(this,'no')">c) Cross-border remittances for Southeast Asia</li>
+<li onclick="pick(this,'no')">d) Replacing MAS payment infrastructure</li>
+</ul>
+<div class="ans" id="a-w10q5"><div class="al">Answer: (b)</div>Project Ubin DvP: Monetary Authority of Singapore (MAS) + SGX. Goal: eliminate settlement risk by making securities and payment transfer happen simultaneously and atomically across different ledgers.</div>
+<button class="rb" onclick="rv('a-w10q5',this)">Show Answer</button></div>
+
+<div class="qc"><div class="qm"><span class="qn">W11·Q1</span><span class="tag th">HOT</span><span class="tag tc">CALC</span></div>
+<div class="qt">Selfish miner mines <strong>2 blocks privately</strong>, block reward = 6.25 BTC. Honest miner mines 1 block. Selfish miner releases 2-block chain (wins). Total attacker reward?</div>
+<ul class="opts">
+<li onclick="pick(this,'no')">a) 6.25 BTC</li>
+<li onclick="pick(this,'ok')">b) 12.5 BTC</li>
+<li onclick="pick(this,'no')">c) 18.75 BTC</li>
+<li onclick="pick(this,'no')">d) 3.125 BTC</li>
+</ul>
+<div class="ans" id="a-w11q1"><div class="al">Answer: (b)</div>Selfish miner gets 2 block rewards = 2 × 6.25 = <b>12.5 BTC</b>. Honest miner's 1 block is orphaned (0 reward). Honest miner wasted effort. Attacker earned more than fair share relative to time invested.</div>
+<button class="rb" onclick="rv('a-w11q1',this)">Show Answer</button></div>
+
+<div class="qc"><div class="qm"><span class="qn">W11·Q2</span><span class="tag th">HOT</span><span class="tag tc">CALC</span></div>
+<div class="qt">Fomo3D: each ticket purchase extends timer by <strong>30 seconds</strong>. Attacker buys ticket with 3 minutes remaining, then prevents all other purchases by filling blocks. How many purchases were prevented?</div>
+<ul class="opts">
+<li onclick="pick(this,'no')">a) 3</li>
+<li onclick="pick(this,'ok')">b) 6</li>
+<li onclick="pick(this,'no')">c) 9</li>
+<li onclick="pick(this,'no')">d) 12</li>
+</ul>
+<div class="ans" id="a-w11q2"><div class="al">Answer: (b)</div>3 minutes = 180 seconds. Each purchase = 30 seconds extension.<br>180 ÷ 30 = <b>6 purchases</b> prevented.<br>Attacker's strategy: buy ticket → timer extends → spam blocks with high-fee useless transactions → other users' purchase txs can't confirm → timer expires → attacker wins pot.</div>
+<button class="rb" onclick="rv('a-w11q2',this)">Show Answer</button></div>
+
+<div class="qc"><div class="qm"><span class="qn">W11·Q3</span><span class="tag th">HOT</span><span class="tag tm">MSQ</span></div>
+<div class="qt">Eclipse attack — attacker has 40% hash power, victim has 30%, rest of network has 30%. After successful eclipse, which are TRUE?</div>
+<ul class="opts">
+<li onclick="pick(this,'no')">a) Attacker now controls 70% of network hashrate</li>
+<li onclick="pick(this,'ok')">b) Honest nodes (victim + rest) can no longer combine their hashing power</li>
+<li onclick="pick(this,'ok')">c) Attacker competes directly with victim: 40% vs 30%</li>
+<li onclick="pick(this,'ok')">d) Attacker competes directly with rest of network: 40% vs 30%</li>
+</ul>
+<div class="ans" id="a-w11q3"><div class="al">Answer: (b), (c), (d)</div>(a) WRONG — attacker does NOT gain victim's hash power. Eclipse splits the honest network.<br>Victim and rest of network are isolated from each other → each faces attacker separately with only 30% vs attacker's 40%. Attacker has majority over each isolated group.</div>
+<button class="rb" onclick="rv('a-w11q3',this)">Show Answer</button></div>
+
+<div class="qc"><div class="qm"><span class="qn">W11·Q4</span><span class="tag th">HOT</span></div>
+<div class="qt">How does Eclipse Attack isolate a victim Bitcoin node?</div>
+<ul class="opts">
+<li onclick="pick(this,'no')">a) DDoS the victim node with packet floods</li>
+<li onclick="pick(this,'ok')">b) Fill victim's "new" and "tried" peer connection tables with attacker-controlled IPs so all connections go to attacker nodes</li>
+<li onclick="pick(this,'no')">c) Intercept and drop all victim's TCP packets at router level</li>
+<li onclick="pick(this,'no')">d) Spam the victim with invalid blocks until it disconnects</li>
+</ul>
+<div class="ans" id="a-w11q4"><div class="al">Answer: (b)</div>Bitcoin maintains two peer tables: "new" (new addresses) and "tried" (previously connected). Attacker fills both with its own IPs via ADDR messages. After victim restarts, all connections go to attacker. Defense: change table management to limit attacker IPs per /24 subnet.</div>
+<button class="rb" onclick="rv('a-w11q4',this)">Show Answer</button></div>
+
+<div class="qc"><div class="qm"><span class="qn">W11·Q5</span><span class="tag th">HOT</span></div>
+<div class="qt">What are <strong>Chaff coins (Mixins)</strong> used for in blockchain privacy?</div>
+<ul class="opts">
+<li onclick="pick(this,'no')">a) To increase transaction fees for miners</li>
+<li onclick="pick(this,'no')">b) A type of stablecoin pegged to gold</li>
+<li onclick="pick(this,'ok')">c) Decoy transaction inputs/outputs added to obscure the real sender/receiver from graph analysis</li>
+<li onclick="pick(this,'no')">d) Coins burned to prove identity</li>
+</ul>
+<div class="ans" id="a-w11q5"><div class="al">Answer: (c)</div>Chaff coins = decoys in transaction graph. Real transaction mixed with fake inputs. Observer cannot determine which inputs/outputs are real vs decoy. Used in Monero (ring signatures). Prevents transaction graph analysis from revealing identities.</div>
+<button class="rb" onclick="rv('a-w11q5',this)">Show Answer</button></div>
+
+<div class="qc"><div class="qm"><span class="qn">W11·Q6</span><span class="tag th">HOT</span></div>
+<div class="qt">In the <strong>double-spend attack with mining pool</strong>, what exactly happens?</div>
+<ul class="opts">
+<li onclick="pick(this,'no')">a) Attacker mines two blocks with the same transaction</li>
+<li onclick="pick(this,'ok')">b) Attacker pays vendor, receives goods, then the mining pool confirms a conflicting transaction returning coins to attacker, orphaning the vendor's payment</li>
+<li onclick="pick(this,'no')">c) Attacker submits same transaction twice to the mempool</li>
+<li onclick="pick(this,'no')">d) Attacker uses two different addresses to double their balance</li>
+</ul>
+<div class="ans" id="a-w11q6"><div class="al">Answer: (b)</div>Sequence: (1) Attacker pays vendor (Tx_v). (2) Vendor ships goods. (3) Attacker broadcasts Tx_a (same inputs, returns to attacker) + 51% hashpower builds longer chain with Tx_a. (4) Network accepts longer chain → Tx_v orphaned → Vendor has no payment but already shipped goods.</div>
+<button class="rb" onclick="rv('a-w11q6',this)">Show Answer</button></div>
+
+<div class="qc"><div class="qm"><span class="qn">W12·Q1</span><span class="tag th">HOT</span></div>
+<div class="qt">What is a <strong>suitable use case for blockchain</strong>?</div>
+<ul class="opts">
+<li onclick="pick(this,'no')">a) High-frequency trading requiring microsecond latency</li>
+<li onclick="pick(this,'no')">b) Storing large video files for a streaming platform</li>
+<li onclick="pick(this,'ok')">c) Transparent, tamper-evident supply chain tracking shared among multiple distrusting parties</li>
+<li onclick="pick(this,'no')">d) Managing a single company's internal database with one admin</li>
+</ul>
+<div class="ans" id="a-w12q1"><div class="al">Answer: (c)</div>Blockchain is suitable when: multiple distrusting parties, need immutability/transparency, no central trusted authority available. NOT suitable for: single owner, high frequency, large files (blockchain isn't a file store), microsecond needs.</div>
+<button class="rb" onclick="rv('a-w12q1',this)">Show Answer</button></div>
+
+<div class="qc"><div class="qm"><span class="qn">W12·Q2</span><span class="tag th">HOT</span></div>
+<div class="qt">In decentralized marketplaces without central platforms, the main unresolved challenge is:</div>
+<ul class="opts">
+<li onclick="pick(this,'no')">a) Smart contract execution cost</li>
+<li onclick="pick(this,'no')">b) Difficulty ordering transactions</li>
+<li onclick="pick(this,'ok')">c) Lack of a quick trusted authority for real-time dispute resolution (e.g., hotel room issues)</li>
+<li onclick="pick(this,'no')">d) Inability to list multiple services</li>
+</ul>
+<div class="ans" id="a-w12q2"><div class="al">Answer: (c)</div>Centralized platforms (Booking.com, Airbnb) provide instant dispute resolution via customer support. Fully decentralized systems have no equivalent — if your hotel room is unsatisfactory, there's no entity to quickly intervene. Smart contracts cannot adjudicate subjective disputes.</div>
+<button class="rb" onclick="rv('a-w12q2',this)">Show Answer</button></div>
+
+<div class="qc"><div class="qm"><span class="qn">W12·Q3</span><span class="tag th">HOT</span></div>
+<div class="qt">What is <strong>Hyperledger Aries</strong> and how does it relate to Indy?</div>
+<ul class="opts">
+<li onclick="pick(this,'no')">a) Aries is a replacement for the Indy ledger with better performance</li>
+<li onclick="pick(this,'ok')">b) Aries is a protocol/agent framework that fills the peer-to-peer transport gap above Indy — it handles credential exchange between agents</li>
+<li onclick="pick(this,'no')">c) Aries is the consensus algorithm used by Indy nodes</li>
+<li onclick="pick(this,'no')">d) Aries provides Indy's cryptographic primitives</li>
+</ul>
+<div class="ans" id="a-w12q3"><div class="al">Answer: (b)</div>Indy = distributed ledger for DIDs/schemas/credential definitions. Aries = agents communicate using Aries protocols (DIDComm) to exchange VCs peer-to-peer. Indy stores public data; Aries handles private bilateral agent communications. Aries works with multiple ledgers, not just Indy.</div>
+<button class="rb" onclick="rv('a-w12q3',this)">Show Answer</button></div>
+
+<div class="qc"><div class="qm"><span class="qn">W12·Q4</span><span class="tag td">DEFN</span></div>
+<div class="qt">What is a <strong>Verifiable Credential (VC)</strong>?</div>
+<ul class="opts">
+<li onclick="pick(this,'no')">a) A password stored on the blockchain</li>
+<li onclick="pick(this,'ok')">b) A tamper-evident digital credential with cryptographic proof, issued by an Issuer about a Subject, held and presented by the Holder</li>
+<li onclick="pick(this,'no')">c) A smart contract that verifies identity automatically</li>
+<li onclick="pick(this,'no')">d) A certificate stored in CA's central database</li>
+</ul>
+<div class="ans" id="a-w12q4"><div class="al">Answer: (b)</div>VC contains: claims (e.g., "Jane has a degree"), issuer DID, holder DID, cryptographic proof. The issuer signs the VC with their private key. Verifier checks signature using issuer's public key on ledger. Holder controls when/to whom they present credentials.</div>
+<button class="rb" onclick="rv('a-w12q4',this)">Show Answer</button></div>
+
+<div class="qc"><div class="qm"><span class="qn">W12·Q5</span><span class="tag th">HOT</span></div>
+<div class="qt">What is the <strong>Genesis File</strong> in Hyperledger Indy?</div>
+<ul class="opts">
+<li onclick="pick(this,'no')">a) The first transaction ever written to Indy ledger</li>
+<li onclick="pick(this,'ok')">b) A configuration file containing IP addresses, ports, and public keys of the initial Indy pool nodes — needed to connect to the network</li>
+<li onclick="pick(this,'no')">c) The master private key for the Indy network</li>
+<li onclick="pick(this,'no')">d) Satoshi's original blockchain configuration</li>
+</ul>
+<div class="ans" id="a-w12q5"><div class="al">Answer: (b)</div>Genesis file is bootstrapping configuration. Without it, a client cannot find and verify any node in the Indy network. Contains: node IPs, ports, and their BLS/Ed25519 public keys to verify node signatures. Analogous to Bitcoin's hardcoded seed nodes.</div>
+<button class="rb" onclick="rv('a-w12q5',this)">Show Answer</button></div>
+
+<div class="qc"><div class="qm"><span class="qn">W12·Q6</span><span class="tag th">HOT</span></div>
+<div class="qt">Which is NOT a feature of blockchain that makes it suitable for supply chain?</div>
+<ul class="opts">
+<li onclick="pick(this,'no')">a) Immutable audit trail of product journey</li>
+<li onclick="pick(this,'no')">b) Multiple distrusting parties can share one ledger</li>
+<li onclick="pick(this,'no')">c) Smart contracts can automate payment on delivery</li>
+<li onclick="pick(this,'ok')">d) Blockchain can verify physical product quality without IoT sensors</li>
+</ul>
+<div class="ans" id="a-w12q6"><div class="al">Answer: (d)</div>Blockchain cannot verify physical world facts — it can only record what is told to it (oracle problem). Physical quality needs IoT sensors, RFID, QR codes as oracles. Blockchain records the data submitted, but cannot independently verify the physical item matches the data.</div>
+<button class="rb" onclick="rv('a-w12q6',this)">Show Answer</button></div>
+</div>
+
+<!-- ===== FORMULAS ===== -->
+<div class="sec" id="formulas">
+<div class="stitle"><div class="ic">📐</div>All Key Formulas & Calculations</div>
+<div class="hl w"><div class="l">⚠️ Every formula here has appeared in assignments</div>Calculation questions appear in at least 5 of 12 weeks. Memorize all of these.</div>
+<div class="fg">
+<div class="fc"><h4>Byzantine Fault Tolerance</h4><div class="fm">n ≥ 3f + 1</div><div class="fn">n=total nodes, f=Byzantine faulty<br><b>7 nodes → f≤2 | 10 nodes → f≤3</b><br>4 nodes → f≤1 | 13 nodes → f≤4</div></div>
+<div class="fc"><h4>Paxos / Raft (Crash Faults)</h4><div class="fm">n ≥ 2f + 1</div><div class="fn"><b>NEVER confuse with BFT.</b> Crash = node stops. Byzantine = node lies.<br>7 nodes → f≤3 | 5 nodes → f≤2</div></div>
+<div class="fc"><h4>Merkle Tree Total Nodes</h4><div class="fm">Total = 2n − 1</div><div class="fn">n = leaf transactions<br><b>16→31 | 8→15 | 4→7 | 32→63</b></div></div>
+<div class="fc"><h4>Merkle Proof Path Length</h4><div class="fm">Steps = log₂(n)</div><div class="fn">n = transactions<br><b>64→6 | 32→5 | 16→4 | 8→3</b><br>Used in SPV (light clients)</div></div>
+<div class="fc"><h4>Bitcoin Daily Production</h4><div class="fm">144 blocks/day</div><div class="fn">24×60÷10 = 144<br><b>Daily BTC = 144 × 3.125 = 450 BTC</b><br>Weekly = 144×7 = 1,008 blocks</div></div>
+<div class="fc"><h4>Hash Collision Attack</h4><div class="fm">2^(N/2) attempts</div><div class="fn">N-bit hash → birthday attack needs 2^(N/2)<br><b>128-bit → 2⁶⁴ | 256-bit → 2¹²⁸</b></div></div>
+<div class="fc"><h4>Ethereum Units</h4><div class="fm">1 Ether = 10¹⁸ Wei</div><div class="fn"><b>1 Gwei = 10⁹ Wei</b> ← TESTED<br>1 Ether = 10⁹ Gwei<br>Gas prices in Gwei</div></div>
+<div class="fc"><h4>Nonce Space</h4><div class="fm">32-bit → 2³² ≈ 4.29B</div><div class="fn">When all nonces exhausted:<br>→ change extra-nonce in coinbase<br>→ or change timestamp</div></div>
+<div class="fc"><h4>Bitcoin Halving</h4><div class="fm">Every 210,000 blocks ≈ 4 years</div><div class="fn"><b>2009: 50 BTC → 2012: 25</b><br><b>2016: 12.5 → 2020: 6.25</b><br><b>2024: 3.125 BTC</b></div></div>
+<div class="fc"><h4>Difficulty Adjustment</h4><div class="fm">New_T = Old_T × (actual / target)</div><div class="fn">target = 2016 blocks × 10 min = 20,160 min<br>Blocks faster than 10min → difficulty ↑<br>Blocks slower → difficulty ↓</div></div>
+<div class="fc"><h4>ByzCoin Complexity</h4><div class="fm">PBFT: O(n²) → CoSi: O(n)</div><div class="fn">CoSi tree: O(n) messages<br>O(log n) latency rounds<br>Schnorr aggregate sig = O(1) verify</div></div>
+<div class="fc"><h4>Selfish Mining Gain</h4><div class="fm">Reward = k × block_reward</div><div class="fn">k = private blocks accepted<br><b>2 private blocks × 6.25 = 12.5 BTC</b><br>Honest miner's block orphaned = 0</div></div>
+<div class="fc"><h4>Fomo3D Timer</h4><div class="fm">Prevented = Time ÷ Ext_per_tx</div><div class="fn">3 min remaining ÷ 30s/purchase<br>= <b>6 purchases prevented</b></div></div>
+<div class="fc"><h4>PBFT Message Complexity</h4><div class="fm">O(n²) total messages</div><div class="fn">Prepare phase: n×n messages<br>Commit phase: n×n messages<br>Bottleneck for large networks</div></div>
+</div>
+
+<div class="hl d" style="margin-top:16px">
+<div class="l">📌 Consensus-Driven Data Transfer — Why Important?</div>
+In permissioned blockchain interoperability (e.g., Fabric to Fabric), the destination network must receive data that is provably finalized on the source. "Consensus-driven" means: data transfer happens only after the required endorsers (2f+1) have signed off. This prevents acting on data that might be "rolled back" or "orphaned." Contrast with permissionless: you'd use SPV (Merkle proofs + sufficient confirmations) to prove a tx is finalized on Bitcoin/Ethereum before bridging assets.
+</div>
+
+<div class="hl i" style="margin-top:10px">
+<div class="l">📌 Oracle Problem — Why Blockchain Cannot Verify Physical World</div>
+Blockchain is deterministic — all nodes must reach the same conclusion from the same data. But physical world data (temperature, product quality, sports scores) requires external input. An oracle is a trusted data feed. The oracle problem: if the oracle lies or is compromised, the blockchain faithfully records wrong data (immutably!). Solutions: Chainlink (decentralized oracles), multiple independent oracles with median value, IoT with hardware attestation.
+</div>
+</div>
+
+<!-- ===== COMPARE ===== -->
+<div class="sec" id="compare">
+<div class="stitle"><div class="ic">⚖️</div>Critical Comparisons — 8 Tables</div>
+<div class="hl w"><div class="l">Most Tested Comparison Type</div>"Which is different between X and Y" or MSQ "which are true about X" — appear almost every assignment.</div>
+
+<h3 style="font-size:12px;color:var(--acc2);margin:16px 0 8px;font-family:var(--mono);text-transform:uppercase;letter-spacing:.08em">1. Permissioned vs Permissionless</h3>
+<table class="ct"><tr><th>Feature</th><th>Permissionless (Bitcoin/ETH)</th><th>Permissioned (Fabric/Indy)</th></tr>
+<tr><td>Access</td><td>Anyone, anonymous</td><td>Invited, identity verified via MSP</td></tr>
+<tr><td>Consensus</td><td>PoW / PoS</td><td>PBFT / Raft / RBFT</td></tr>
+<tr><td>Transparency</td><td>Fully public</td><td>Selective — channels/private data</td></tr>
+<tr><td>Speed</td><td>Slow (minutes/block)</td><td>Fast (seconds/block)</td></tr>
+<tr><td>Token</td><td>Required (ETH, BTC)</td><td>No native token needed</td></tr>
+<tr><td>Sybil Protection</td><td>PoW (cost of identity)</td><td>Identity certificates (MSP/CA)</td></tr>
+<tr><td>Finality</td><td>Probabilistic (confirmations)</td><td>Immediate (Byzantine agreement)</td></tr></table>
+
+<h3 style="font-size:12px;color:var(--acc2);margin:16px 0 8px;font-family:var(--mono);text-transform:uppercase;letter-spacing:.08em">2. Safety vs Liveness</h3>
+<table class="ct"><tr><th>Property</th><th>Safety</th><th>Liveness</th></tr>
+<tr><td>Meaning</td><td>"Nothing bad ever happens"</td><td>"Something good eventually happens"</td></tr>
+<tr><td>In consensus</td><td>No two nodes decide different values</td><td>A value will eventually be decided</td></tr>
+<tr><td>In Bitcoin</td><td>Confirmed tx cannot be reversed</td><td>Tx eventually gets confirmed</td></tr>
+<tr><td>Paxos, no quorum</td><td>✅ Preserved always</td><td>❌ Affected (no progress)</td></tr>
+<tr><td>FLP Impossibility</td><td>Cannot guarantee both</td><td>In async system with failures</td></tr></table>
+
+<h3 style="font-size:12px;color:var(--acc2);margin:16px 0 8px;font-family:var(--mono);text-transform:uppercase;letter-spacing:.08em">3. Consensus Protocol Comparison</h3>
+<table class="ct"><tr><th>Protocol</th><th>Fault Model</th><th>Min Nodes</th><th>Finality</th><th>Scale</th></tr>
+<tr><td>Paxos</td><td>Crash faults</td><td>2f+1</td><td>Yes</td><td>Medium</td></tr>
+<tr><td>Multi-Paxos</td><td>Crash faults</td><td>2f+1</td><td>Yes</td><td>Medium</td></tr>
+<tr><td>Raft</td><td>Crash faults</td><td>2f+1</td><td>Yes</td><td>Medium</td></tr>
+<tr><td>PBFT</td><td>Byzantine</td><td>3f+1</td><td>Immediate</td><td>Small (O(n²))</td></tr>
+<tr><td>PoW (Bitcoin)</td><td>Byzantine</td><td>N/A</td><td>Probabilistic</td><td>Large</td></tr>
+<tr><td>Algorand VRF</td><td>Byzantine (&lt;1/3)</td><td>N/A</td><td>Near-immediate</td><td>Large</td></tr>
+<tr><td>ByzCoin</td><td>Byzantine</td><td>3f+1</td><td>Immediate</td><td>Medium+</td></tr></table>
+
+<h3 style="font-size:12px;color:var(--acc2);margin:16px 0 8px;font-family:var(--mono);text-transform:uppercase;letter-spacing:.08em">4. Soft Fork vs Hard Fork vs Temporary Fork</h3>
+<table class="ct"><tr><th>Type</th><th>Cause</th><th>Result</th><th>Resolution</th></tr>
+<tr><td>Soft Fork</td><td>Protocol upgrade tightening rules</td><td>Backward-compatible, old nodes accept new blocks</td><td>Gradual adoption</td></tr>
+<tr><td>Hard Fork</td><td>Protocol upgrade changing rules incompatibly</td><td>Permanent chain split — two coins</td><td>Each chain independent (e.g., BCH)</td></tr>
+<tr><td>Temporary Fork</td><td>Two miners find blocks simultaneously</td><td>Short-lived competing chains</td><td>Longest chain rule (resolved in blocks)</td></tr></table>
+
+<h3 style="font-size:12px;color:var(--acc2);margin:16px 0 8px;font-family:var(--mono);text-transform:uppercase;letter-spacing:.08em">5. UTXO Model vs Account Model</h3>
+<table class="ct"><tr><th>Feature</th><th>UTXO (Bitcoin)</th><th>Account (Ethereum)</th></tr>
+<tr><td>State representation</td><td>Set of unspent outputs</td><td>Account balances directly</td></tr>
+<tr><td>Privacy</td><td>Better (new addresses per tx)</td><td>Worse (persistent address)</td></tr>
+<tr><td>Parallelism</td><td>Better (UTXOs independent)</td><td>Harder (shared state)</td></tr>
+<tr><td>Smart contracts</td><td>Complex/limited</td><td>Natural — account holds code+state</td></tr>
+<tr><td>Double-spend check</td><td>Check UTXO not already spent</td><td>Check nonce + balance</td></tr></table>
+
+<h3 style="font-size:12px;color:var(--acc2);margin:16px 0 8px;font-family:var(--mono);text-transform:uppercase;letter-spacing:.08em">6. Bitcoin-NG vs ByzCoin vs PBFT</h3>
+<table class="ct"><tr><th>System</th><th>Key Idea</th><th>Problem Solved</th><th>Weakness</th></tr>
+<tr><td>Bitcoin-NG</td><td>Key-block elects leader; micro-blocks carry txs</td><td>Increases Bitcoin throughput</td><td>Faulty leader can produce bad micro-blocks</td></tr>
+<tr><td>ByzCoin</td><td>PoW + CoSi committee signing of micro-blocks</td><td>Fixes Bitcoin-NG's faulty leader issue</td><td>Committee overhead; scalability limits</td></tr>
+<tr><td>PBFT</td><td>All-to-all message exchange for Byzantine agreement</td><td>Deterministic BFT for permissioned networks</td><td>O(n²) messages — doesn't scale</td></tr></table>
+
+<h3 style="font-size:12px;color:var(--acc2);margin:16px 0 8px;font-family:var(--mono);text-transform:uppercase;letter-spacing:.08em">7. Hyperledger Indy vs Aries</h3>
+<table class="ct"><tr><th>Component</th><th>Layer</th><th>Role</th><th>Key Entities</th></tr>
+<tr><td>Hyperledger Indy</td><td>Ledger</td><td>Stores DIDs, schemas, cred definitions. RBFT consensus.</td><td>Stewards (validators), Trust Anchors</td></tr>
+<tr><td>Hyperledger Aries</td><td>Agent/Transport</td><td>P2P protocol for secure credential exchange between agents</td><td>Agents (Issuer, Holder, Verifier)</td></tr>
+<tr><td>Verifiable Credentials</td><td>Data format</td><td>Signed claims from Issuer about Subject</td><td>Issuer → Holder → Verifier</td></tr></table>
+
+<h3 style="font-size:12px;color:var(--acc2);margin:16px 0 8px;font-family:var(--mono);text-transform:uppercase;letter-spacing:.08em">8. Pre-image Resistance vs Collision Resistance vs Second Pre-image</h3>
+<table class="ct"><tr><th>Property</th><th>Given</th><th>Find</th><th>Difficulty</th></tr>
+<tr><td>Pre-image resistance</td><td>Hash h</td><td>Any m where H(m)=h</td><td>2^N work</td></tr>
+<tr><td>Second pre-image resist.</td><td>Message m1</td><td>m2≠m1 where H(m1)=H(m2)</td><td>2^N work</td></tr>
+<tr><td>Collision resistance</td><td>Nothing</td><td>Any m1≠m2 where H(m1)=H(m2)</td><td>2^(N/2) work (birthday)</td></tr></table>
+<h3 style="font-size:12px;color:var(--acc2);margin:16px 0 8px;font-family:var(--mono);text-transform:uppercase;letter-spacing:.08em">9. Smart Contract Platform Comparison</h3>
+<table class="ct">
+<tr><th>Feature</th><th>Ethereum</th><th>Hyperledger Fabric</th><th>Hyperledger Sawtooth</th></tr>
+<tr><td>Type</td><td>Permissionless public</td><td>Permissioned enterprise</td><td>Permissioned enterprise</td></tr>
+<tr><td>Smart contract</td><td>Solidity / EVM bytecode</td><td>Chaincode (Go/Java/Node.js)</td><td>Transaction Processor (any lang)</td></tr>
+<tr><td>Consensus</td><td>PoS (Casper)</td><td>Raft / PBFT (pluggable)</td><td>PBFT / PoET</td></tr>
+<tr><td>Native token</td><td>ETH (required for gas)</td><td>None</td><td>None (optional)</td></tr>
+<tr><td>Privacy</td><td>Public (all see all)</td><td>Channels + private data</td><td>Private transactions</td></tr>
+<tr><td>Scale</td><td>~15–30 TPS (post PoS)</td><td>1,000+ TPS</td><td>1,000+ TPS</td></tr>
+</table>
+
+</div>
+
+<!-- ===== ATTACKS ===== -->
+<div class="sec" id="attacks">
+<div class="stitle"><div class="ic">🛡️</div>All 9 Attack Types — Complete Reference</div>
+<div class="hl w"><div class="l">Week 11 had 5+ attack questions</div>Know mechanism, not just name. "What can they do" AND "what can they NOT do".</div>
+<div class="ag">
+<div class="ac"><div class="an">51% Attack</div><div class="ad">Attacker controls &gt;50% hash power. Controls block production.</div><div class="ak">CAN: double-spend, censor txs, mine faster<br>CANNOT: steal wallets, change supply, break crypto</div></div>
+<div class="ac"><div class="an">Sybil Attack</div><div class="ad">Create many fake identities to gain disproportionate influence in P2P network.</div><div class="ak">Defense: PoW (cost per identity), PKI (CA-verified identity)</div></div>
+<div class="ac"><div class="an">Eclipse Attack</div><div class="ad">Fill victim's peer connection tables with attacker-controlled IPs to isolate them from honest network.</div><div class="ak">Splits honest network → attacker has majority over each isolated group. Defense: IP diversity limits.</div></div>
+<div class="ac"><div class="an">Selfish Mining</div><div class="ad">Mine blocks privately, release strategically to waste honest miners' effort and earn disproportionate rewards.</div><div class="ak">Requires ~33% hashrate to be profitable. Orphans honest miners' blocks.</div></div>
+<div class="ac"><div class="an">Double Spend</div><div class="ad">Spend same UTXO in two transactions. Use 51% to get conflicting tx confirmed.</div><div class="ak">Vendor ships goods → payment tx orphaned → attacker keeps goods + coins. 6 confirmations mitigate.</div></div>
+<div class="ac"><div class="an">Transaction Privacy Leakage</div><div class="ad">Graph analysis of public blockchain reveals sender/receiver identity despite pseudonymity.</div><div class="ak">Defense: Chaff coins (mixins), CoinJoin, stealth addresses, Zero-Knowledge Proofs</div></div>
+<div class="ac"><div class="an">Replay Attack</div><div class="ad">Rebroadcast valid signed transaction to execute it again (or on another chain after fork).</div><div class="ak">Defense: Transaction nonce (Ethereum), replay protection in hard forks, chain ID</div></div>
+<div class="ac"><div class="an">Front-Running (DeFi)</div><div class="ad">Miner/validator sees pending tx in mempool, inserts own tx before it to profit (e.g., copy trade).</div><div class="ak">Possible because miners choose tx ordering. MEV (Miner Extractable Value). Defense: commit-reveal, private mempools.</div></div>
+<div class="ac"><div class="an">Fomo3D Block Stuffing</div><div class="ad">Attacker wins prize by preventing other ticket purchases — stuffs blocks with high-fee useless transactions.</div><div class="ak">3 min remaining ÷ 30s/purchase = 6 prevented purchases. Timer expires → attacker wins pot.</div></div>
+</div>
+
+<div class="hl d" style="margin-top:16px"><div class="l">Deep Dive: Eclipse Attack (Appeared 4× in W11)</div>
+Steps: (1) Attacker sends many ADDR messages with its IPs. (2) Victim's "new" table fills with attacker IPs. (3) Victim restarts (or attacker forces disconnect). (4) All reconnections go to attacker nodes. (5) Victim is now isolated — sees only attacker-controlled chain. <b>Effect with 40%/30%/30% split:</b> Attacker doesn't gain victim's power. Instead: victim faces attacker alone (30% vs 40%), rest of network faces attacker alone (30% vs 40%). Attacker has advantage over each isolated group.</div>
+</div>
+
+<!-- ===== MOCK 30Q ===== -->
+<div class="sec" id="mock">
+<div class="stitle"><div class="ic">📝</div>Mock Test — 30 Questions (Full Coverage)</div>
+<div class="hl s"><div class="l">Instructions</div>Click answers to check. Your score updates live. Questions span all 12 weeks in exam difficulty.</div>
+<div style="background:var(--card);border:1px solid var(--bord);border-radius:9px;padding:14px;margin-bottom:16px">
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:7px">
+<span style="font-size:11px;color:var(--mut);font-family:var(--mono)">SCORE</span>
+<span style="font-size:20px;font-weight:800;color:var(--acc2)" id="sd">0 / 30</span>
+</div>
+<div class="sbw"><div class="sb" id="sb2" style="width:0%"></div></div>
+<div style="font-size:10px;color:var(--mut);font-family:var(--mono);margin-top:4px" id="grade">Answer questions to see your grade</div>
+</div>
+
+<div id="mock-qs"></div>
+</div>
+
+<!-- ===== CHEATSHEET ===== -->
+<div class="sec" id="cheat">
+<div class="stitle"><div class="ic">⚡</div>Last-Night Cheatsheet — Everything in One Place</div>
+<div class="hl s"><div class="l">Read this Thursday night</div>Every item here was directly tested in your assignments. 5 minutes = full coverage.</div>
+<div class="cs-grid">
+<div class="cs-card"><h4>Cryptography</h4>
+<div class="kv"><span class="k">SHA-256 output</span><span class="v">Always 256 bits</span></div>
+<div class="kv"><span class="k">Hashing vs Encryption</span><span class="v">Hash = one-way, Encrypt = reversible</span></div>
+<div class="kv"><span class="k">Non-repudiation</span><span class="v">Digital signature (private key)</span></div>
+<div class="kv"><span class="k">Encrypt to Bob</span><span class="v">Bob's PUBLIC key</span></div>
+<div class="kv"><span class="k">Sign as Alice</span><span class="v">Alice's PRIVATE key</span></div>
+<div class="kv"><span class="k">Verify Alice</span><span class="v">Alice's PUBLIC key</span></div>
+<div class="kv"><span class="k">Pre-image resist.</span><span class="v">Given H, find M: 2^N work</span></div>
+<div class="kv"><span class="k">Collision resist.</span><span class="v">Find any m1≠m2: 2^(N/2) work</span></div>
+<div class="kv"><span class="k">HMAC</span><span class="v">Auth + integrity, NOT non-repudiation</span></div>
+</div>
+<div class="cs-card"><h4>Bitcoin Formulas</h4>
+<div class="kv"><span class="k">Block time</span><span class="v">10 minutes target</span></div>
+<div class="kv"><span class="k">Blocks per day</span><span class="v">144</span></div>
+<div class="kv"><span class="k">Current reward</span><span class="v">3.125 BTC (2024–2028)</span></div>
+<div class="kv"><span class="k">Daily BTC mined</span><span class="v">144 × 3.125 = 450 BTC</span></div>
+<div class="kv"><span class="k">Block ID</span><span class="v">SHA256(SHA256(header))</span></div>
+<div class="kv"><span class="k">Nonce size</span><span class="v">32-bit = 2³² values</span></div>
+<div class="kv"><span class="k">Difficulty adjust</span><span class="v">Every 2016 blocks</span></div>
+<div class="kv"><span class="k">Odd Merkle leaves</span><span class="v">Duplicate last hash</span></div>
+<div class="kv"><span class="k">Soft fork</span><span class="v">Backward compatible</span></div>
+<div class="kv"><span class="k">Hard fork</span><span class="v">Permanent chain split</span></div>
+</div>
+<div class="cs-card"><h4>Consensus Formulas</h4>
+<div class="kv"><span class="k">BFT (Byzantine)</span><span class="v">n ≥ 3f+1</span></div>
+<div class="kv"><span class="k">Paxos/Raft (Crash)</span><span class="v">n ≥ 2f+1</span></div>
+<div class="kv"><span class="k">Merkle total nodes</span><span class="v">2n − 1</span></div>
+<div class="kv"><span class="k">Merkle proof steps</span><span class="v">log₂(n)</span></div>
+<div class="kv"><span class="k">Birthday attack</span><span class="v">2^(N/2)</span></div>
+<div class="kv"><span class="k">Paxos safety</span><span class="v">Never violated</span></div>
+<div class="kv"><span class="k">Paxos liveness</span><span class="v">Affected without quorum</span></div>
+<div class="kv"><span class="k">PBFT complexity</span><span class="v">O(n²) messages</span></div>
+<div class="kv"><span class="k">CoSi complexity</span><span class="v">O(n) msgs, O(log n) rounds</span></div>
+</div>
+<div class="cs-card"><h4>Ethereum</h4>
+<div class="kv"><span class="k">1 Ether =</span><span class="v">10¹⁸ Wei</span></div>
+<div class="kv"><span class="k">1 Gwei =</span><span class="v">10⁹ Wei</span></div>
+<div class="kv"><span class="k">Gas unit</span><span class="v">Computational work unit</span></div>
+<div class="kv"><span class="k">View functions</span><span class="v">0 gas (read-only)</span></div>
+<div class="kv"><span class="k">EVM purpose</span><span class="v">Deterministic execution</span></div>
+<div class="kv"><span class="k">Solidity</span><span class="v">Turing-complete, gas-bounded</span></div>
+<div class="kv"><span class="k">PoET uses</span><span class="v">Intel SGX hardware</span></div>
+<div class="kv"><span class="k">PoB sends to</span><span class="v">Unspendable eater address</span></div>
+</div>
+<div class="cs-card"><h4>Hyperledger Fabric</h4>
+<div class="kv"><span class="k">TX flow</span><span class="v">Endorse → Order → Validate</span></div>
+<div class="kv"><span class="k">MSP role</span><span class="v">Identity + roles (not issue certs)</span></div>
+<div class="kv"><span class="k">CA role</span><span class="v">Issues X.509 certificates</span></div>
+<div class="kv"><span class="k">Orderer role</span><span class="v">Sequence txs only (no exec)</span></div>
+<div class="kv"><span class="k">Channel</span><span class="v">Private ledger subset</span></div>
+<div class="kv"><span class="k">World state</span><span class="v">Current snapshot (CouchDB)</span></div>
+<div class="kv"><span class="k">Blockchain</span><span class="v">Full tx history (immutable)</span></div>
+<div class="kv"><span class="k">No token</span><span class="v">No native cryptocurrency</span></div>
+</div>
+<div class="cs-card"><h4>Indy / Aries / SSI</h4>
+<div class="kv"><span class="k">DID format</span><span class="v">did:method:identifier</span></div>
+<div class="kv"><span class="k">Stewards</span><span class="v">Run RBFT nodes, approve Trust Anchors</span></div>
+<div class="kv"><span class="k">Trust Anchors</span><span class="v">Issue credentials (e.g., university)</span></div>
+<div class="kv"><span class="k">Aries purpose</span><span class="v">P2P transport above Indy</span></div>
+<div class="kv"><span class="k">Genesis file</span><span class="v">IP/ports/keys of initial nodes</span></div>
+<div class="kv"><span class="k">support_revocation:F</span><span class="v">Cannot revoke credential later</span></div>
+<div class="kv"><span class="k">VC trust triangle</span><span class="v">Issuer → Holder → Verifier</span></div>
+</div>
+<div class="cs-card"><h4>Advanced Consensus</h4>
+<div class="kv"><span class="k">Bitcoin-NG key-block</span><span class="v">PoW, elects epoch leader</span></div>
+<div class="kv"><span class="k">Bitcoin-NG micro-block</span><span class="v">Carries transactions (no PoW)</span></div>
+<div class="kv"><span class="k">ByzCoin vs BTC-NG</span><span class="v">Fixes faulty leader via CoSi</span></div>
+<div class="kv"><span class="k">Algorand j=0</span><span class="v">NOT in committee</span></div>
+<div class="kv"><span class="k">Algorand security</span><span class="v">&lt;1/3 stake adversary</span></div>
+<div class="kv"><span class="k">PoET HW</span><span class="v">Intel SGX enclave</span></div>
+<div class="kv"><span class="k">Blockchain trilemma</span><span class="v">Scalability + Security + Decent.</span></div>
+</div>
+<div class="cs-card"><h4>Attacks One-Liners</h4>
+<div class="kv"><span class="k">51%</span><span class="v">Double-spend + censor (not steal)</span></div>
+<div class="kv"><span class="k">Sybil</span><span class="v">Fake identities → PoW cost</span></div>
+<div class="kv"><span class="k">Eclipse</span><span class="v">Fill peer tables → network split</span></div>
+<div class="kv"><span class="k">Selfish mining</span><span class="v">Private blocks → orphan honest</span></div>
+<div class="kv"><span class="k">Double spend</span><span class="v">Vendor ships, tx orphaned</span></div>
+<div class="kv"><span class="k">Chaff coins</span><span class="v">Decoys for graph privacy</span></div>
+<div class="kv"><span class="k">Replay</span><span class="v">Rebroadcast signed tx → nonce fixes</span></div>
+<div class="kv"><span class="k">Fomo3D</span><span class="v">Block stuffing → timer expires</span></div>
+</div>
+<div class="cs-card"><h4>HTLC / Payment Channels</h4>
+<div class="kv"><span class="k">HTLC secret revealed</span><span class="v">Receiver gets funds</span></div>
+<div class="kv"><span class="k">HTLC timeout</span><span class="v">Sender gets refund</span></div>
+<div class="kv"><span class="k">Atomic swap</span><span class="v">Either both complete or both revert</span></div>
+<div class="kv"><span class="k">Lightning on-chain</span><span class="v">Open + close only</span></div>
+<div class="kv"><span class="k">Lightning off-chain</span><span class="v">All intermediate payments</span></div>
+<div class="kv"><span class="k">Project Ubin DvP</span><span class="v">Atomic securities + cash exchange</span></div>
+</div>
+<div class="cs-card"><h4>MeiTY 17 Use Cases (India National Strategy)</h4>
+<div class="kv"><span class="k">Agriculture</span><span class="v">Farm records, crop insurance</span></div>
+<div class="kv"><span class="k">Education</span><span class="v">Degree verification, certificates</span></div>
+<div class="kv"><span class="k">Financial Services</span><span class="v">KYC, lending, payments</span></div>
+<div class="kv"><span class="k">Healthcare</span><span class="v">Patient records, drug traceability</span></div>
+<div class="kv"><span class="k">Land Records</span><span class="v">Tamper-proof property titles</span></div>
+<div class="kv"><span class="k">Supply Chain</span><span class="v">Track goods from farm to shelf</span></div>
+<div class="kv"><span class="k">Judiciary</span><span class="v">Immutable court records</span></div>
+<div class="kv"><span class="k">Identity</span><span class="v">Digital ID, Aadhaar integration</span></div>
+<div class="kv"><span class="k">Published: Jan 2021</span><span class="v">17 national interest areas</span></div>
+</div>
+<div class="cs-card"><h4>When Blockchain is NOT Suitable</h4>
+<div class="kv"><span class="k">High-frequency data</span><span class="v">Sensor data needing rapid delete/modify</span></div>
+<div class="kv"><span class="k">Large file storage</span><span class="v">Video streaming — not a file store</span></div>
+<div class="kv"><span class="k">ML training</span><span class="v">Computation intensive — not on-chain</span></div>
+<div class="kv"><span class="k">Microsecond latency</span><span class="v">HFT — blockchain too slow</span></div>
+<div class="kv"><span class="k">Single owner</span><span class="v">No trust issue = no need for blockchain</span></div>
+<div class="kv"><span class="k">Key signal</span><span class="v">Multiple distrusting parties = blockchain fits</span></div>
+</div>
+<div class="cs-card"><h4>Paxos Roles & Properties</h4>
+<div class="kv"><span class="k">Proposer</span><span class="v">Initiates consensus, sends Prepare</span></div>
+<div class="kv"><span class="k">Acceptor</span><span class="v">Votes on proposals (majority = quorum)</span></div>
+<div class="kv"><span class="k">Learner</span><span class="v">Learns the decided value</span></div>
+<div class="kv"><span class="k">One node = 3 roles?</span><span class="v">Yes — roles are logical, not physical</span></div>
+<div class="kv"><span class="k">Basic Paxos rounds</span><span class="v">Prepare→Promise→Accept→Accepted</span></div>
+<div class="kv"><span class="k">Multi-Paxos optimization</span><span class="v">Skip Prepare phase with stable leader</span></div>
+<div class="kv"><span class="k">Classic Paxos fault</span><span class="v">Crash faults ONLY (not Byzantine)</span></div>
+</div>
+<div class="cs-card"><h4>Distributed Systems Key Terms</h4>
+<div class="kv"><span class="k">State Machine Replication</span><span class="v">Same inputs → same state on all nodes</span></div>
+<div class="kv"><span class="k">Byzantine Generals Problem</span><span class="v">Agree despite malicious nodes</span></div>
+<div class="kv"><span class="k">FLP Impossibility</span><span class="v">No async system guarantees both safety+liveness</span></div>
+<div class="kv"><span class="k">CAP Theorem</span><span class="v">Consistency, Availability, Partition — pick 2</span></div>
+<div class="kv"><span class="k">View change (PBFT)</span><span class="v">Replace faulty primary — ensures liveness</span></div>
+<div class="kv"><span class="k">Weak synchrony</span><span class="v">Adversary controls network for bounded time only</span></div>
+</div></div>
+
+<div class="hl i" style="margin-top:16px">
+<div class="l">Bitcoin Halving Timeline</div>
+<div style="display:flex;gap:0;flex-wrap:wrap;margin-top:8px">
+<div style="background:rgba(124,106,247,.12);border:1px solid rgba(124,106,247,.2);border-radius:6px;padding:7px 12px;margin:3px;text-align:center;font-family:var(--mono);font-size:11px"><div style="color:var(--mut);font-size:9px">GENESIS</div><div style="color:#fff;font-weight:700">2009</div><div style="color:var(--acc2)">50 BTC</div></div>
+<div style="background:rgba(124,106,247,.12);border:1px solid rgba(124,106,247,.2);border-radius:6px;padding:7px 12px;margin:3px;text-align:center;font-family:var(--mono);font-size:11px"><div style="color:var(--mut);font-size:9px">1ST HALVING</div><div style="color:#fff;font-weight:700">2012</div><div style="color:var(--acc2)">25 BTC</div></div>
+<div style="background:rgba(124,106,247,.12);border:1px solid rgba(124,106,247,.2);border-radius:6px;padding:7px 12px;margin:3px;text-align:center;font-family:var(--mono);font-size:11px"><div style="color:var(--mut);font-size:9px">2ND HALVING</div><div style="color:#fff;font-weight:700">2016</div><div style="color:var(--acc2)">12.5 BTC</div></div>
+<div style="background:rgba(124,106,247,.12);border:1px solid rgba(124,106,247,.2);border-radius:6px;padding:7px 12px;margin:3px;text-align:center;font-family:var(--mono);font-size:11px"><div style="color:var(--mut);font-size:9px">3RD HALVING</div><div style="color:#fff;font-weight:700">2020</div><div style="color:var(--acc2)">6.25 BTC</div></div>
+<div style="background:rgba(247,201,72,.12);border:1px solid rgba(247,201,72,.35);border-radius:6px;padding:7px 12px;margin:3px;text-align:center;font-family:var(--mono);font-size:11px"><div style="color:var(--acc2);font-size:9px">4TH HALVING ★</div><div style="color:#fff;font-weight:700">2024</div><div style="color:var(--acc2)">3.125 BTC</div></div>
+<div style="background:rgba(124,106,247,.06);border:1px solid rgba(124,106,247,.12);border-radius:6px;padding:7px 12px;margin:3px;text-align:center;font-family:var(--mono);font-size:11px"><div style="color:var(--mut);font-size:9px">5TH HALVING</div><div style="color:var(--mut);font-weight:700">2028</div><div style="color:var(--mut)">1.5625 BTC</div></div>
+</div>
+</div>
+</div>
+
+
+<!-- ===== TOPIC TRACKER ===== -->
+<div class="sec" id="tracker">
+<div class="stitle"><div class="ic">📊</div>Topic Confidence Tracker <button class="print-btn" onclick="window.print()">🖨️ Print Cheatsheet</button></div>
+<div class="exam-timer" id="exam-timer-box">
+<div class="timer-seg"><div class="timer-num" id="t-days">--</div><div class="timer-lbl">DAYS</div></div>
+<div class="timer-seg"><div class="timer-num" id="t-hrs">--</div><div class="timer-lbl">HRS</div></div>
+<div class="timer-seg"><div class="timer-num" id="t-min">--</div><div class="timer-lbl">MIN</div></div>
+<div style="flex:1;font-size:11px;color:var(--mut);font-family:var(--mono)">Until <b style="color:var(--acc2)">Friday exam</b> — mark topics as Done ✅ or Weak ⚠️</div>
+</div>
+<div class="hl i"><div class="l">How to use</div>After studying each topic, mark it Done (green) or Weak (red). This helps you focus your last-day revision on weak areas only.</div>
+<div class="track-grid" id="tracker-grid"></div>
+<div style="background:var(--card);border:1px solid var(--bord);border-radius:9px;padding:14px;margin-top:10px">
+<div style="font-size:12px;font-weight:700;margin-bottom:10px;color:var(--acc2)">Your Weak Topics (need revision):</div>
+<div id="weak-list" style="font-size:12px;color:var(--mut);font-family:var(--mono)">No weak topics marked yet — start marking above!</div>
+</div>
+</div>
+
+<!-- ===== STELLAR / RIPPLE / INTEROP ===== -->
+<div class="sec" id="stellar">
+<div class="stitle"><div class="ic">🌟</div>Weeks 10–12 Deep: Interoperability, Stellar, Ripple & Use Cases</div>
+<div class="hl w"><div class="l">⚠️ Often underestimated — 3-5 questions from here</div>Stellar performance numbers, Project Ubin phases, SCP steps, Ripple UNL overlap — all appeared in Week 12 assignments verbatim.</div>
+
+<div class="qc"><div class="qm"><span class="qn">W12·STELLAR·Q1</span><span class="tag th">HOT</span></div>
+<div class="qt">What performance characteristics were observed for the <strong>Stellar network</strong>?</div>
+<ul class="opts">
+<li onclick="pick(this,'no')">a) Transaction throughput of ~1,000 TPS and 10s finality</li>
+<li onclick="pick(this,'ok')">b) ~350 TPS throughput AND ~1 second finality/latency</li>
+<li onclick="pick(this,'no')">c) Energy consumption comparable to Bitcoin mining</li>
+<li onclick="pick(this,'no')">d) Confirmation times of 3–5 minutes like Bitcoin</li>
+</ul>
+<div class="ans" id="a-stellar1"><div class="al">Answer: (b) — Both are correct (MSQ)</div>Stellar designed for fast, efficient transactions. <b>~350 TPS</b> (high throughput) and <b>~1 second finality</b> (near-instant). Compare: Bitcoin ≈7 TPS, 60min finality. Ethereum ≈15 TPS, ~15s blocks.</div>
+<button class="rb" onclick="rv('a-stellar1',this)">Show Answer</button></div>
+
+<div class="qc"><div class="qm"><span class="qn">W12·STELLAR·Q2</span><span class="tag th">HOT</span></div>
+<div class="qt"><strong>SCP (Stellar Consensus Protocol)</strong> uses federated voting. The key steps are:</div>
+<div class="msq-note">MSQ — select all correct</div>
+<ul class="opts">
+<li onclick="pick(this,'no')">a) Propose</li>
+<li onclick="pick(this,'ok')">b) Vote</li>
+<li onclick="pick(this,'ok')">c) Accept</li>
+<li onclick="pick(this,'no')">d) Prepare</li>
+<li onclick="pick(this,'ok')">e) Confirm</li>
+</ul>
+<div class="ans" id="a-stellar2"><div class="al">Answer: (b), (c), (e)</div>SCP federated voting steps: <b>Vote → Accept → Confirm</b>. Nodes vote on values, accept once sufficient agreement reached, confirm to finalize. "Propose" and "Prepare" are Paxos terms, not SCP.</div>
+<button class="rb" onclick="rv('a-stellar2',this)">Show Answer</button></div>
+
+<div class="qc"><div class="qm"><span class="qn">W12·RIPPLE·Q1</span><span class="tag th">HOT</span></div>
+<div class="qt">According to research by Amores-Sesar et al., what level of <strong>UNL (Unique Node List) overlap</strong> is now recommended for safety in the Ripple network?</div>
+<ul class="opts">
+<li onclick="pick(this,'no')">a) 20%</li>
+<li onclick="pick(this,'no')">b) 40%</li>
+<li onclick="pick(this,'no')">c) 80%</li>
+<li onclick="pick(this,'ok')">d) Over 90%</li>
+</ul>
+<div class="ans" id="a-ripple1"><div class="al">Answer: (d)</div>Very high UNL overlap (&gt;90%) ensures most nodes agree on the same trusted validators, improving network safety and consistency. Lower overlap risks safety violations where different nodes have conflicting views.</div>
+<button class="rb" onclick="rv('a-ripple1',this)">Show Answer</button></div>
+
+<div class="qc"><div class="qm"><span class="qn">W12·UBIN·Q1</span><span class="tag th">HOT</span></div>
+<div class="qt">Project Ubin Phase 2 (MAS Singapore) used decentralized multilateral netting to solve:</div>
+<ul class="opts">
+<li onclick="pick(this,'no')">a) Preventing double-spending of digital currencies</li>
+<li onclick="pick(this,'no')">b) Verifying identities between banks</li>
+<li onclick="pick(this,'ok')">c) Gridlock situations where banks lack liquidity for individual payments but are overall solvent</li>
+<li onclick="pick(this,'no')">d) Stopping unauthorized access to central bank accounts</li>
+</ul>
+<div class="ans" id="a-ubin1"><div class="al">Answer: (c)</div>Gridlock: banks cannot complete payments due to temporary liquidity shortages, even if net-positive. Multilateral netting allows multiple obligations to cancel out efficiently — Bank A owes B, B owes C, C owes A → net to zero.</div>
+<button class="rb" onclick="rv('a-ubin1',this)">Show Answer</button></div>
+
+<div class="qc"><div class="qm"><span class="qn">W12·COLLABFED·Q1</span><span class="tag th">HOT</span></div>
+<div class="qt">How does <strong>CollabFed</strong> combine multiple service provider signatures into a single response?</div>
+<ul class="opts">
+<li onclick="pick(this,'no')">a) Schnorr multi-signatures</li>
+<li onclick="pick(this,'ok')">b) CoSi (Collective Signing) using BLS signatures</li>
+<li onclick="pick(this,'no')">c) Ring signatures</li>
+<li onclick="pick(this,'no')">d) HMAC with shared secret</li>
+</ul>
+<div class="ans" id="a-collabfed1"><div class="al">Answer: (b)</div>CoSi with BLS allows multiple signatures to be aggregated into one compact, verifiable signature. This improves efficiency — verifier checks one signature instead of N signatures. BLS (Boneh-Lynn-Shacham) signatures are aggregatable unlike ECDSA.</div>
+<button class="rb" onclick="rv('a-collabfed1',this)">Show Answer</button></div>
+
+<div class="qc"><div class="qm"><span class="qn">W12·COLLABFED·Q2</span><span class="tag th">HOT</span></div>
+<div class="qt">In CollabFed decentralized marketplace, how is a request from a public blockchain verified and transferred to a private consortium ledger?</div>
+<ul class="opts">
+<li onclick="pick(this,'no')">a) Through a central broker API</li>
+<li onclick="pick(this,'ok')">b) Using SPV (Simplified Payment Verification) plus approval from two-thirds of service providers</li>
+<li onclick="pick(this,'no')">c) By running Proof of Work on the private ledger</li>
+<li onclick="pick(this,'no')">d) By encrypting it with a shared private key</li>
+</ul>
+<div class="ans" id="a-collabfed2"><div class="al">Answer: (b)</div>SPV verifies the request EXISTS on the public blockchain (lightweight verification without full node). Two-thirds approval (supermajority) ensures Byzantine fault tolerance on the consortium side before processing privately.</div>
+<button class="rb" onclick="rv('a-collabfed2',this)">Show Answer</button></div>
+
+<div class="qc"><div class="qm"><span class="qn">W10·INTEROP·Q1</span><span class="tag th">HOT</span></div>
+<div class="qt">In permissioned blockchain interoperability (e.g., TradeLens to We.Trade), what MUST be included with data moving from source to destination network?</div>
+<ul class="opts">
+<li onclick="pick(this,'ok')">a) Endorsements/signatures from source network + compliance with source's Exposure Control policy</li>
+<li onclick="pick(this,'no')">b) Proof that data was encrypted using destination network's private key</li>
+<li onclick="pick(this,'no')">c) Physical bill of lading in PDF format</li>
+<li onclick="pick(this,'no')">d) Mining proof from the source network</li>
+</ul>
+<div class="ans" id="a-interop1"><div class="al">Answer: (a) — Both (a) parts correct</div>For data to be accepted: (1) <b>Endorsements</b> = consensus proof from source that data is finalized. (2) <b>Exposure Control</b> = source network policy defining what data can be shared with destination. Both required.</div>
+<button class="rb" onclick="rv('a-interop1',this)">Show Answer</button></div>
+
+<div class="qc"><div class="qm"><span class="qn">W10·INTEROP·Q2</span><span class="tag th">HOT</span></div>
+<div class="qt">In three-party atomic swap (Alice-Bob-Carol) with timelocks 6Δ, 5Δ, 4Δ — why is the staggered sequence critical?</div>
+<ul class="opts">
+<li onclick="pick(this,'no')">a) To ensure car title is transferred before Alice spends alt-coins</li>
+<li onclick="pick(this,'ok')">b) To allow Carol to claim Bitcoin and Bob to claim alt-coins before their contracts expire, even if secret is revealed late in the chain</li>
+<li onclick="pick(this,'no')">c) To prevent Bitcoin network from crashing due to volume</li>
+<li onclick="pick(this,'no')">d) To ensure Alice has least time to act</li>
+</ul>
+<div class="ans" id="a-interop2"><div class="al">Answer: (b)</div>Staggered timelocks give each participant buffer time. If Carol uses secret at 4Δ to claim BTC, Bob still has 1Δ window (until 5Δ) to use same secret to claim alt-coins from Alice. Without staggering, chain might break mid-swap.</div>
+<button class="rb" onclick="rv('a-interop2',this)">Show Answer</button></div>
+
+<div class="qc"><div class="qm"><span class="qn">W10·INDY·Q1</span><span class="tag th">HOT</span></div>
+<div class="qt">In permissioned interoperability relay, what does the <strong>Data Acceptance Policy</strong> evaluate?</div>
+<ul class="opts">
+<li onclick="pick(this,'no')">a) Current exchange rate of assets being transferred</li>
+<li onclick="pick(this,'ok')">b) Whether received data has sufficient valid attestations/signatures from the source network</li>
+<li onclick="pick(this,'no')">c) Identity of the programmer who wrote the source chaincode</li>
+<li onclick="pick(this,'no')">d) Whether source network has higher market cap than destination</li>
+</ul>
+<div class="ans" id="a-indyq1"><div class="al">Answer: (b)</div>Data Acceptance Policy is the destination network's "trust threshold" — minimum number of valid signatures from source needed before destination accepts the data as valid and writes it to own ledger. Like requiring 5 of 7 endorsers.</div>
+<button class="rb" onclick="rv('a-indyq1',this)">Show Answer</button></div>
+
+<div class="qc"><div class="qm"><span class="qn">W10·INDY·Q2</span><span class="tag th">HOT</span></div>
+<div class="qt">In Hyperledger Indy, which statements correctly describe roles of <strong>Stewards and Trust Anchors</strong>?</div>
+<div class="msq-note">MSQ — select all correct</div>
+<ul class="opts">
+<li onclick="pick(this,'ok')">a) Stewards can register new DIDs (verinyms) on the ledger</li>
+<li onclick="pick(this,'no')">b) Trust Anchors maintain the RBFT consensus nodes</li>
+<li onclick="pick(this,'ok')">c) Trust Anchors (e.g., University) issue verifiable credentials to users</li>
+<li onclick="pick(this,'ok')">d) Stewards are pre-approved participants who can approve transition to Trust Anchor role</li>
+</ul>
+<div class="ans" id="a-indyq2"><div class="al">Answer: (a), (c), (d)</div>(b) is WRONG — Stewards run RBFT nodes, NOT Trust Anchors. Stewards → most trusted, approve Trust Anchors, write to ledger. Trust Anchors → issue credentials. Users → hold credentials.</div>
+<button class="rb" onclick="rv('a-indyq2',this)">Show Answer</button></div>
+
+<div class="qc"><div class="qm"><span class="qn">W10·HTLC·Q2</span><span class="tag th">HOT</span></div>
+<div class="qt">Risks of using a <strong>Centralized Trusted Third Party (TTP)</strong> for cross-chain asset transfers:</div>
+<div class="msq-note">MSQ — select all correct</div>
+<ul class="opts">
+<li onclick="pick(this,'ok')">a) Users must relinquish control of funds to third party</li>
+<li onclick="pick(this,'ok')">b) Third party is a single point of failure</li>
+<li onclick="pick(this,'no')">c) Cross-chain transfers cannot be done using TTP</li>
+<li onclick="pick(this,'ok')">d) Users may lose funds if TTP is compromised or shuts down</li>
+</ul>
+<div class="ans" id="a-htlc2"><div class="al">Answer: (a), (b), (d)</div>(c) is WRONG — TTPs DO enable cross-chain transfers (that's their purpose). The risks are: trust required, single point of failure, counterparty risk. HTLC solves this by removing the TTP entirely.</div>
+<button class="rb" onclick="rv('a-htlc2',this)">Show Answer</button></div>
+
+<div class="qc"><div class="qm"><span class="qn">W12·GOVT·Q1</span><span class="tag th">HOT</span></div>
+<div class="qt">Why is it better to store a <strong>blockchain-based access log</strong> for sensitive government data rather than duplicating the data?</div>
+<ul class="opts">
+<li onclick="pick(this,'no')">a) It speeds up access to large files</li>
+<li onclick="pick(this,'no')">b) It allows deletion of stored data</li>
+<li onclick="pick(this,'ok')">c) It minimizes breach risks while keeping transparent record of who accessed what</li>
+<li onclick="pick(this,'no')">d) It removes need for centralized storage entirely</li>
+</ul>
+<div class="ans" id="a-govtq1"><div class="al">Answer: (c)</div>Storing actual sensitive data on-chain is risky (immutable = can never be deleted, visible to all nodes). Storing only access logs (who/when/what accessed) keeps sensitive data off-chain while providing transparent, tamper-evident audit trail.</div>
+<button class="rb" onclick="rv('a-govtq1',this)">Show Answer</button></div>
+
+<h3 style="font-size:12px;color:var(--acc2);margin:20px 0 8px;font-family:var(--mono);text-transform:uppercase;letter-spacing:.08em">Project Ubin — All 5 Phases Summary</h3>
+<table class="ct">
+<tr><th>Phase</th><th>Focus</th><th>Key Technology</th><th>Outcome</th></tr>
+<tr><td>Phase 1</td><td>Tokenized SGD on distributed ledger</td><td>Ethereum private chain</td><td>Proof-of-concept for digital cash</td></tr>
+<tr><td>Phase 2</td><td>Decentralized interbank settlement</td><td>Multilateral netting, gridlock resolution</td><td>Eliminated gridlock in payment queues</td></tr>
+<tr><td>Phase 3 ★</td><td>Delivery vs Payment (DvP)</td><td>Atomic swap of securities + cash</td><td>Simultaneous cross-ledger settlement</td></tr>
+<tr><td>Phase 4</td><td>Cross-border payments</td><td>Multi-currency transactions</td><td>Linked with other CBDCs globally</td></tr>
+<tr><td>Phase 5</td><td>Ubin+ / Industry integration</td><td>Full production ecosystem</td><td>Real industry deployment</td></tr>
+</table>
+
+<h3 style="font-size:12px;color:var(--acc2);margin:16px 0 8px;font-family:var(--mono);text-transform:uppercase;letter-spacing:.08em">Interoperability Methods Comparison</h3>
+<table class="ct">
+<tr><th>Method</th><th>How it works</th><th>Trust Model</th><th>Example</th></tr>
+<tr><td>Centralized TTP</td><td>Trusted third party holds assets during swap</td><td>Trust in TTP — single point of failure</td><td>Exchanges (Binance, Coinbase)</td></tr>
+<tr><td>Atomic Swap (HTLC)</td><td>Hash timelock, no intermediary</td><td>Trustless — cryptographic</td><td>BTC↔LTC cross-chain</td></tr>
+<tr><td>Relay/SPV</td><td>Light client proof from source chain</td><td>Cryptographic — source consensus</td><td>CollabFed public→private</td></tr>
+<tr><td>Side Chains</td><td>Separate chain with 2-way peg to main chain</td><td>Semi-trusted — federation</td><td>Liquid Network (BTC sidechain)</td></tr>
+</table>
+</div>
+
+</div><!-- /main -->
+<div id="prog">Score: <b id="ps2">0</b>/30</div>
+
+  <script src="assets/js/mock-questions.js"></script>
+  <script src="assets/js/tracker-topics.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
