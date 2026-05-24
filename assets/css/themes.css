@@ -1,0 +1,76 @@
+/* Royal theme tokens — loaded first */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800&family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+:root,
+[data-theme="royal-noir"] {
+  --bg: #08060f;
+  --surf: #110e1c;
+  --card: #1a1528;
+  --card-hover: #221c34;
+  --bord: #2d2545;
+  --acc: #9b7bff;
+  --acc-dim: rgba(155, 123, 255, 0.12);
+  --acc2: #d4af37;
+  --acc2-dim: rgba(212, 175, 55, 0.12);
+  --acc3: #5eead4;
+  --acc4: #f87171;
+  --acc5: #67e8f9;
+  --txt: #f0ebff;
+  --txt-soft: #c8c0e0;
+  --mut: #7a7199;
+  --mono: 'JetBrains Mono', 'Courier New', monospace;
+  --display: 'Cinzel', Georgia, serif;
+  --body: 'Source Sans 3', 'Segoe UI', system-ui, sans-serif;
+  --hdr-grad-1: #0a0614;
+  --hdr-grad-2: #1a0a2e;
+  --hdr-grad-3: #0a1520;
+  --glow: rgba(212, 175, 55, 0.15);
+  --shadow: rgba(0, 0, 0, 0.45);
+  --grain: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+}
+
+[data-theme="velvet-crown"] {
+  --bg: #120810;
+  --surf: #1c0e16;
+  --card: #261420;
+  --card-hover: #301a28;
+  --bord: #4a2038;
+  --acc: #c45c8a;
+  --acc-dim: rgba(196, 92, 138, 0.14);
+  --acc2: #e8c547;
+  --acc2-dim: rgba(232, 197, 71, 0.12);
+  --acc3: #86efac;
+  --acc4: #fb7185;
+  --acc5: #fbbf24;
+  --txt: #fdf2f8;
+  --txt-soft: #e8d0dc;
+  --mut: #9a7088;
+  --hdr-grad-1: #140610;
+  --hdr-grad-2: #2a0a1e;
+  --hdr-grad-3: #1a0810;
+  --glow: rgba(232, 197, 71, 0.18);
+  --shadow: rgba(40, 10, 25, 0.5);
+}
+
+[data-theme="sapphire-regent"] {
+  --bg: #030812;
+  --surf: #081220;
+  --card: #0e1a30;
+  --card-hover: #142240;
+  --bord: #1e3458;
+  --acc: #5b8def;
+  --acc-dim: rgba(91, 141, 239, 0.14);
+  --acc2: #f0d060;
+  --acc2-dim: rgba(240, 208, 96, 0.12);
+  --acc3: #6ee7b7;
+  --acc4: #f87171;
+  --acc5: #93c5fd;
+  --txt: #eef4ff;
+  --txt-soft: #b8cce8;
+  --mut: #5a7299;
+  --hdr-grad-1: #020810;
+  --hdr-grad-2: #0a1830;
+  --hdr-grad-3: #061018;
+  --glow: rgba(240, 208, 96, 0.16);
+  --shadow: rgba(0, 20, 50, 0.55);
+}

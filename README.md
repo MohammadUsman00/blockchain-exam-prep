@@ -1,42 +1,45 @@
-# Blockchain & Its Applications — NPTEL Exam Prep Kit
+# Blockchain & Its Applications — Premium Study Guide
 
-**Course:** Blockchain and its Applications (NOC26_CS34) · **Institute:** IIT Kharagpur · **Exam:** NPTEL CBT Final · April 2026
+**Open-source** exam preparation for blockchain courses — practice questions, formulas, mock tests, cheatsheet, and a topic tracker. No course-specific dates or branding.
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/YOUR_USERNAME/blockchain-exam-prep)
-
----
-
-## Live demo
-
-**[View live →](https://blockchain-exam-prep.vercel.app)**  
-Production URL: `https://blockchain-exam-prep.vercel.app`
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/YOUR_USERNAME/blockchain-study-guide)
 
 ---
 
 ## What is this?
 
-A **static**, **no-build** study site: practice questions by week, a 30-question mock test, formulas, comparison tables, attack summaries, a printable cheatsheet, and a **topic tracker** that saves to `localStorage`. Styling and behaviour are split into small files so you can edit data or logic without scrolling through one giant HTML file.
+A **static**, **no-build** study site with a premium royal UI. Pick one of three themes, search across 150+ questions, run a 30-question mock test, and track topic confidence in your browser.
 
 ---
 
-## Repository layout
+## Repository layout (modular)
 
 ```
 BlockChain_NPTEL_Guide/
-├── index.html              # Page shell + all markup (sections, questions, tables)
+├── index.html                  # Page shell + all content sections
 ├── assets/
 │   ├── css/
-│   │   └── styles.css      # Theme, layout, cards, print rules
+│   │   ├── themes.css          # Royal theme tokens + fonts
+│   │   └── styles.css          # Layout & components (imports themes.css)
 │   └── js/
 │       ├── mock-questions.js   # Global MQ — 30 mock MCQs
-│       ├── tracker-topics.js   # Global TOPICS — checklist rows per week
-│       └── app.js              # Nav, pick/rv, mock UI, countdown, tracker persistence
-├── vercel.json             # Vercel static hosting config + security/cache headers
-├── DEPLOY.md               # Step-by-step deploy to Vercel / GitHub Pages
+│       ├── tracker-topics.js   # Global TOPICS — checklist per module
+│       ├── theme.js            # Theme switcher (localStorage: bcTheme)
+│       ├── nav.js              # Section tabs + back-to-top
+│       ├── quiz.js             # Practice card pick / reveal
+│       ├── mock.js             # Mock test UI + reset / reveal all
+│       ├── tracker.js          # Progress ring + weak-topic list
+│       ├── search.js           # Global question search
+│       └── app.js              # Bootstrap
+├── vercel.json
 └── README.md
 ```
 
-**Load order:** `mock-questions.js` → `tracker-topics.js` → `app.js` (see the bottom of `index.html`). The app expects globals `MQ` and `TOPICS`.
+**Script load order** (bottom of `index.html`):
+
+```
+mock-questions.js → tracker-topics.js → theme.js → nav.js → quiz.js → mock.js → tracker.js → search.js → app.js
+```
 
 ---
 
@@ -44,30 +47,20 @@ BlockChain_NPTEL_Guide/
 
 | Area | What you get |
 |------|----------------|
-| Practice | Question cards with clickable options and expandable explanations |
-| Mock test | 30 questions, score bar, accuracy summary |
-| Reference | Formulas, comparison tables, attack types, Stellar/Ripple/Ubin notes |
-| Tracker | Mark topics Done / Weak; persists as JSON under key `bcTracker` |
-| Countdown | Header + tracker tab; driven by `EXAM_AT` in `assets/js/app.js` |
-
----
-
-## Topics covered (high level)
-
-- **Weeks 1–3:** SHA-256, avalanche effect, Merkle trees, UTXO, mining  
-- **Weeks 4–6:** Forks, 51% attack, Ethereum/gas, BFT `3f+1`, Paxos, PBFT  
-- **Weeks 7–9:** Hyperledger Fabric (EOV), MSP, Algorand VRF, DIDs, SSI  
-- **Weeks 10–12:** HTLC, atomic swaps, trilemma, attacks, use cases, interoperability  
+| **Royal themes** | Noir (purple/gold), Velvet (burgundy/gold), Sapphire (blue/gold) — saved in `localStorage` |
+| **Typography** | Cinzel headings, Source Sans 3 body, JetBrains Mono for code-style labels |
+| **Practice** | 150+ MCQs across 12 modules with expandable explanations |
+| **Mock test** | 30 questions, live score, reset, reveal-all |
+| **Search** | Filter questions in the active section from the nav bar |
+| **Tracker** | Mark topics Done / Weak; progress ring + header % |
+| **Reference** | Formulas, comparison tables, attack cards, cheatsheet |
+| **Print** | Print-friendly cheatsheet from the Tracker tab |
 
 ---
 
 ## Quick start (local)
 
-No `npm install` or build step is required.
-
-Serve the **project root** over HTTP so relative assets (`assets/css/styles.css`, `assets/js/*.js`) and `localStorage` behave correctly.
-
-### Windows PowerShell (Python)
+No `npm install` or build step.
 
 ```powershell
 cd "C:\Users\usman\OneDrive\Desktop\BlockChain_NPTEL_Guide"
@@ -76,51 +69,37 @@ python -m http.server 3000
 
 Open [http://localhost:3000/](http://localhost:3000/).
 
-### Alternative (Node.js)
-
-```powershell
-cd "C:\Users\usman\OneDrive\Desktop\BlockChain_NPTEL_Guide"
-npx --yes serve .
-```
-
-Use the localhost URL printed in the terminal (usually `http://localhost:3000`).
-
-> Avoid opening `index.html` directly via `file://` if you want stable tracker persistence and browser-consistent behaviour.
-
----
-
-## Deploy (quick)
-
-- **Vercel:** import the repo and set framework preset to **Other** (not Remix). Optional CLI: `npm i -g vercel` then `vercel` from the repo root.  
-- **GitHub Pages:** deploy from branch `main`, folder `/` (root).  
-
-More detail: [DEPLOY.md](DEPLOY.md).
+> Serve over HTTP (not `file://`) so `localStorage` and assets load reliably.
 
 ---
 
 ## Customisation
 
-- **Exam date/time:** edit `EXAM_AT` in [assets/js/app.js](assets/js/app.js).  
-- **Mock questions:** edit [assets/js/mock-questions.js](assets/js/mock-questions.js) (`MQ` array).  
-- **Tracker rows:** edit [assets/js/tracker-topics.js](assets/js/tracker-topics.js) (`TOPICS` array).  
-- **Look and feel:** [assets/css/styles.css](assets/css/styles.css).  
+| Change | File |
+|--------|------|
+| Mock questions | `assets/js/mock-questions.js` (`MQ`) |
+| Tracker topics | `assets/js/tracker-topics.js` (`TOPICS`) |
+| Theme colors | `assets/css/themes.css` |
+| Layout / cards | `assets/css/styles.css` |
+| New theme name | Add `[data-theme="…"]` in `themes.css` + button in `index.html` |
 
 ---
 
-## Recent fixes (maintenance notes)
+## Topics covered
 
-- **JavaScript:** String building for the mock test and topic tracker had broken quote escaping (invalid syntax and broken `onclick` handlers). That is corrected in `app.js`.  
-- **HTML:** Several question cards had been left **after** `</html>` (invalid document, so those cards never appeared in the live DOM). They are merged into the correct week sections inside `index.html`.  
-- **Navigation:** Section buttons now call `S(id, this)` so the active tab does not rely on the non-standard global `event` object.  
-
----
-
-## Disclaimer
-
-Study aid based on public NPTEL materials (NOC26_CS34). Not affiliated with IIT Kharagpur or NPTEL.
+- **Modules 1–3:** Cryptography, Bitcoin, Merkle trees  
+- **Modules 4–6:** Forks, Ethereum, BFT, Paxos, PBFT  
+- **Modules 7–9:** Fabric, Algorand, DIDs, SSI  
+- **Modules 10–12:** HTLC, attacks, trilemma, interoperability, Stellar/Ripple  
 
 ---
 
 ## License
 
 MIT — use, modify, and share freely.
+
+---
+
+## Disclaimer
+
+Community study aid for blockchain and distributed-ledger topics. Not affiliated with any university or MOOC platform. Course content remains the property of respective instructors and institutions.

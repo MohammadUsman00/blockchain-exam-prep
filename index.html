@@ -1,34 +1,50 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="royal-noir">
 <head>
 <meta charset="UTF-8">
-<meta name="description" content="NPTEL Blockchain and its Applications NOC26_CS34 Complete Exam Preparation — All 12 Weeks, 150+ Questions, Formulas, Mock Tests">
+<meta name="description" content="Open-source Blockchain & Its Applications study guide — 150+ practice questions, formulas, mock tests, cheatsheet, and topic tracker across 12 modules.">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Blockchain & Its Applications — NPTEL NOC26_CS34 Complete Exam Prep Kit</title>
-  <link rel="stylesheet" href="assets/css/styles.css">
+<title>Blockchain & Its Applications — Premium Study Guide</title>
+<link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
 <div class="hdr">
 <div class="hdr-in">
-<div class="badge">⚡ Final Exam · NOC26_CS34 · IIT Kharagpur · April 2026</div>
-<h1>Blockchain &amp; Its Applications<br>Complete Exam Prep Kit</h1>
-<p class="sub">NPTEL MOOC · All 12 Weeks · 150+ Questions · Full Coverage · Final Edition</p>
-<div style="font-size:10px;color:var(--mut);font-family:var(--mono);margin-top:4px">
-Instructors: IIT Kharagpur · Pre-req: Computer Networks, OS, Cryptography · Industry: IBM · HPE · Intel
+<div class="hdr-top">
+<div>
+<div class="badge">◆ Open Source · Blockchain Study Guide</div>
+<h1>Blockchain &amp; Its Applications<br>Premium Preparation Guide</h1>
+<p class="sub">Complete coverage · 12 modules · 150+ questions · Formulas · Mock tests · Topic tracker</p>
+<div class="meta-line">Cryptography · Bitcoin · Ethereum · Hyperledger · Consensus · Security · Interoperability</div>
+</div>
+<div class="theme-switcher" role="group" aria-label="Choose theme">
+<div class="theme-label">Royal Theme</div>
+<div class="theme-btns">
+<button class="theme-btn on" data-theme="royal-noir" onclick="setTheme('royal-noir',this)"><span class="swatch swatch-noir"></span>Noir</button>
+<button class="theme-btn" data-theme="velvet-crown" onclick="setTheme('velvet-crown',this)"><span class="swatch swatch-velvet"></span>Velvet</button>
+<button class="theme-btn" data-theme="sapphire-regent" onclick="setTheme('sapphire-regent',this)"><span class="swatch swatch-sapphire"></span>Sapphire</button>
+</div>
+</div>
 </div>
 <div class="stats">
 <div class="stat">Questions <b>150+</b></div>
-<div class="stat">Weeks <b>1–12</b></div>
+<div class="stat">Modules <b>1–12</b></div>
 <div class="stat">Formulas <b>16 Key</b></div>
 <div class="stat">Mock Tests <b>30Q</b></div>
 <div class="stat">Comparisons <b>9 Tables</b></div>
 <div class="stat">Attacks <b>9 Types</b></div>
-<div class="stat">Exam Day <b id="countdown">Loading...</b></div>
+<div class="stat">Progress <b id="header-progress">0%</b></div>
 </div>
-<div style="margin-top:12px;background:rgba(74,222,128,.07);border:1px solid rgba(74,222,128,.2);border-radius:7px;padding:8px 14px;font-size:11px;color:#86efac;font-family:var(--mono)">
-📋 NPTEL CBT Structure: Section 1 (25×1m, no neg) · Section 2 (10×2m, no neg) · Section 3 (5×2m MSQ, partial marks)
+<div class="info-banner">
+📋 Typical exam format: MCQ sections (1 mark each) · Extended MCQ (2 marks) · MSQ with partial marking — use the mock test to simulate real conditions.
 </div>
 </div>
+</div>
+<div class="nav-wrap">
+<div class="nav-bar">
+<div class="search-box">
+<span class="search-icon">⌕</span>
+<input type="search" id="global-search" placeholder="Search topics…" oninput="doSearch(this.value)" aria-label="Search questions and topics">
 </div>
 <nav>
 <div class="nav-in">
@@ -45,7 +61,10 @@ Instructors: IIT Kharagpur · Pre-req: Computer Networks, OS, Cryptography · In
 <button class="nb" onclick="S('stellar',this)">🌟 Stellar/Ripple</button>
 </div>
 </nav>
+</div>
+</div>
 <div class="main">
+<div class="search-results-bar" id="search-bar"></div>
 
 <!-- ===== W1-3 ===== -->
 <div class="sec on" id="w1">
@@ -1032,14 +1051,18 @@ Steps: (1) Attacker sends many ADDR messages with its IPs. (2) Victim's "new" ta
 <!-- ===== MOCK 30Q ===== -->
 <div class="sec" id="mock">
 <div class="stitle"><div class="ic">📝</div>Mock Test — 30 Questions (Full Coverage)</div>
-<div class="hl s"><div class="l">Instructions</div>Click answers to check. Your score updates live. Questions span all 12 weeks in exam difficulty.</div>
-<div style="background:var(--card);border:1px solid var(--bord);border-radius:9px;padding:14px;margin-bottom:16px">
-<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:7px">
-<span style="font-size:11px;color:var(--mut);font-family:var(--mono)">SCORE</span>
-<span style="font-size:20px;font-weight:800;color:var(--acc2)" id="sd">0 / 30</span>
+<div class="hl s"><div class="l">Instructions</div>Click answers to check. Your score updates live. Questions span all 12 modules at exam difficulty.</div>
+<div class="score-panel">
+<div class="score-header">
+<span class="score-label">Mock Test Score</span>
+<span class="score-value" id="sd">0 / 30</span>
 </div>
 <div class="sbw"><div class="sb" id="sb2" style="width:0%"></div></div>
-<div style="font-size:10px;color:var(--mut);font-family:var(--mono);margin-top:4px" id="grade">Answer questions to see your grade</div>
+<div class="score-grade" id="grade">Answer questions to see your grade</div>
+<div class="mock-actions">
+<button class="btn-action gold" onclick="resetMock()">↺ Reset Mock</button>
+<button class="btn-action" onclick="revealAllMock()">Reveal All Answers</button>
+</div>
 </div>
 
 <div id="mock-qs"></div>
@@ -1048,7 +1071,7 @@ Steps: (1) Attacker sends many ADDR messages with its IPs. (2) Victim's "new" ta
 <!-- ===== CHEATSHEET ===== -->
 <div class="sec" id="cheat">
 <div class="stitle"><div class="ic">⚡</div>Last-Night Cheatsheet — Everything in One Place</div>
-<div class="hl s"><div class="l">Read this Thursday night</div>Every item here was directly tested in your assignments. 5 minutes = full coverage.</div>
+<div class="hl s"><div class="l">Quick revision</div>Every item here covers high-frequency exam topics. 5 minutes = full coverage before your test.</div>
 <div class="cs-grid">
 <div class="cs-card"><h4>Cryptography</h4>
 <div class="kv"><span class="k">SHA-256 output</span><span class="v">Always 256 bits</span></div>
@@ -1194,17 +1217,24 @@ Steps: (1) Attacker sends many ADDR messages with its IPs. (2) Victim's "new" ta
 <!-- ===== TOPIC TRACKER ===== -->
 <div class="sec" id="tracker">
 <div class="stitle"><div class="ic">📊</div>Topic Confidence Tracker <button class="print-btn" onclick="window.print()">🖨️ Print Cheatsheet</button></div>
-<div class="exam-timer" id="exam-timer-box">
-<div class="timer-seg"><div class="timer-num" id="t-days">--</div><div class="timer-lbl">DAYS</div></div>
-<div class="timer-seg"><div class="timer-num" id="t-hrs">--</div><div class="timer-lbl">HRS</div></div>
-<div class="timer-seg"><div class="timer-num" id="t-min">--</div><div class="timer-lbl">MIN</div></div>
-<div style="flex:1;font-size:11px;color:var(--mut);font-family:var(--mono)">Until <b style="color:var(--acc2)">Friday exam</b> — mark topics as Done ✅ or Weak ⚠️</div>
+<div class="progress-dashboard" id="progress-dashboard">
+<div class="progress-ring-wrap">
+<svg class="progress-ring" viewBox="0 0 72 72">
+<circle class="ring-bg" cx="36" cy="36" r="30"/>
+<circle class="ring-fill" id="ring-fill" cx="36" cy="36" r="30" stroke-dasharray="188.5" stroke-dashoffset="188.5"/>
+</svg>
+<div class="progress-pct" id="progress-pct">0%</div>
 </div>
-<div class="hl i"><div class="l">How to use</div>After studying each topic, mark it Done (green) or Weak (red). This helps you focus your last-day revision on weak areas only.</div>
+<div class="progress-stats">
+<h3>Your Study Progress</h3>
+<div class="progress-detail" id="progress-detail">Mark topics as Done or Weak to track your preparation.</div>
+</div>
+</div>
+<div class="hl i"><div class="l">How to use</div>After studying each topic, mark it Done (green) or Weak (red). Focus revision on weak areas — your progress syncs automatically in this browser.</div>
 <div class="track-grid" id="tracker-grid"></div>
-<div style="background:var(--card);border:1px solid var(--bord);border-radius:9px;padding:14px;margin-top:10px">
-<div style="font-size:12px;font-weight:700;margin-bottom:10px;color:var(--acc2)">Your Weak Topics (need revision):</div>
-<div id="weak-list" style="font-size:12px;color:var(--mut);font-family:var(--mono)">No weak topics marked yet — start marking above!</div>
+<div class="weak-panel">
+<div class="weak-panel-title">Your Weak Topics (need revision)</div>
+<div id="weak-list">No weak topics marked yet — start marking above!</div>
 </div>
 </div>
 
@@ -1349,7 +1379,7 @@ Steps: (1) Attacker sends many ADDR messages with its IPs. (2) Victim's "new" ta
 <div class="ans" id="a-govtq1"><div class="al">Answer: (c)</div>Storing actual sensitive data on-chain is risky (immutable = can never be deleted, visible to all nodes). Storing only access logs (who/when/what accessed) keeps sensitive data off-chain while providing transparent, tamper-evident audit trail.</div>
 <button class="rb" onclick="rv('a-govtq1',this)">Show Answer</button></div>
 
-<h3 style="font-size:12px;color:var(--acc2);margin:20px 0 8px;font-family:var(--mono);text-transform:uppercase;letter-spacing:.08em">Project Ubin — All 5 Phases Summary</h3>
+<h3 class="section-heading">Project Ubin — All 5 Phases Summary</h3>
 <table class="ct">
 <tr><th>Phase</th><th>Focus</th><th>Key Technology</th><th>Outcome</th></tr>
 <tr><td>Phase 1</td><td>Tokenized SGD on distributed ledger</td><td>Ethereum private chain</td><td>Proof-of-concept for digital cash</td></tr>
@@ -1359,7 +1389,7 @@ Steps: (1) Attacker sends many ADDR messages with its IPs. (2) Victim's "new" ta
 <tr><td>Phase 5</td><td>Ubin+ / Industry integration</td><td>Full production ecosystem</td><td>Real industry deployment</td></tr>
 </table>
 
-<h3 style="font-size:12px;color:var(--acc2);margin:16px 0 8px;font-family:var(--mono);text-transform:uppercase;letter-spacing:.08em">Interoperability Methods Comparison</h3>
+<h3 class="section-heading">Interoperability Methods Comparison</h3>
 <table class="ct">
 <tr><th>Method</th><th>How it works</th><th>Trust Model</th><th>Example</th></tr>
 <tr><td>Centralized TTP</td><td>Trusted third party holds assets during swap</td><td>Trust in TTP — single point of failure</td><td>Exchanges (Binance, Coinbase)</td></tr>
@@ -1370,10 +1400,33 @@ Steps: (1) Attacker sends many ADDR messages with its IPs. (2) Victim's "new" ta
 </div>
 
 </div><!-- /main -->
-<div id="prog">Score: <b id="ps2">0</b>/30</div>
 
-  <script src="assets/js/mock-questions.js"></script>
-  <script src="assets/js/tracker-topics.js"></script>
-  <script src="assets/js/app.js"></script>
+<footer class="site-footer">
+<div class="footer-in">
+<div>
+<div class="footer-brand">Blockchain Study Guide</div>
+<div class="footer-meta">Open-source preparation resource · MIT License · Free to use, modify &amp; share</div>
+<div class="footer-credit">Created by <a href="https://github.com/MohammadUsman00" target="_blank" rel="noopener noreferrer">Mohammad Usman</a></div>
+</div>
+<div class="footer-badges">
+<span class="footer-badge">150+ Questions</span>
+<span class="footer-badge">3 Royal Themes</span>
+<span class="footer-badge">localStorage Sync</span>
+</div>
+</div>
+</footer>
+
+<div id="prog">Score: <b id="ps2">0</b>/30</div>
+<button class="back-top" id="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
+
+<script src="assets/js/mock-questions.js"></script>
+<script src="assets/js/tracker-topics.js"></script>
+<script src="assets/js/theme.js"></script>
+<script src="assets/js/nav.js"></script>
+<script src="assets/js/quiz.js"></script>
+<script src="assets/js/mock.js"></script>
+<script src="assets/js/tracker.js"></script>
+<script src="assets/js/search.js"></script>
+<script src="assets/js/app.js"></script>
 </body>
 </html>
